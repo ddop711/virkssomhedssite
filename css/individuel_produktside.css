@@ -1,0 +1,1267 @@
+/* css/produkt_individuel.css */
+
+/* Farver inspireret af mockup */
+:root {
+  --prod-bg: #d9ccb5;
+  --prod-bg-dark: #183822;
+  --prod-card-bg: #e5d7c0;
+  --prod-border-soft: rgba(0, 0, 0, 0.08);
+}
+
+body {
+  background-color: var(--prod-bg);
+}
+
+/* HEADER */
+.product-header {
+  background-color: var(--prod-bg);
+  border-bottom: 1px solid var(--prod-border-soft);
+}
+
+.product-header__inner {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: #123024;
+  font-weight: 600;
+}
+
+.product-header__logo-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background-color: #3b7d57;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.product-header__logo-text {
+  font-size: 1rem;
+}
+
+.product-header__icons {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.icon-button {
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.product-header__search {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 1rem 0.7rem;
+}
+
+.product-header__search input {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid var(--prod-border-soft);
+  padding: 0.55rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+/* PAGE WRAP */
+.product-page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding-bottom: 2.5rem;
+}
+
+/* HERO / PRODUKTKORT – MOBIL */
+
+.product-hero {
+  padding: 1rem;
+}
+
+.product-media {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* Hovedbillede – kun billedet, ingen kasse */
+.product-media__main {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  height: auto;
+}
+
+.product-media__main img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* THUMB GRID */
+.product-media__thumbs {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.thumb {
+  background-color: #e3d4b9;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  height: 110px;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tekstkasser hvis de bruges senere */
+.thumb--text,
+.thumb--icon {
+  background-color: #204328;
+  color: #f7f0df;
+}
+
+.thumb-text {
+  padding: 0.9rem 1rem;
+  font-size: 0.8rem;
+}
+
+.thumb-text__title {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.thumb-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.thumb-text li + li {
+  margin-top: 0.2rem;
+}
+
+/* Produktkort */
+.product-card {
+  background-color: var(--prod-card-bg);
+  padding: 1.2rem 1rem 1.1rem;
+  margin-top: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.product-card__label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  color: #6d6559;
+  margin-bottom: 0.3rem;
+}
+
+.product-card__title {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.product-card__subtitle {
+  font-size: 0.9rem;
+  color: #5e5b55;
+  margin-bottom: 0.4rem;
+}
+
+.product-card__info {
+  font-size: 0.8rem;
+  color: #6f6a61;
+  margin-bottom: 0.5rem;
+}
+
+.product-card__price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.product-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.product-card__select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  gap: 0.75rem;
+}
+
+.product-card__select select {
+  flex-shrink: 0;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--prod-border-soft);
+  background-color: #f8f0df;
+}
+
+.btn--full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Lille ekstra-kort (køb 2 spar 25%) */
+.product-card__extra {
+  margin-top: 0.6rem;
+  padding: 1rem 1.1rem;
+  background-color: #f3e4cf;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.85rem;
+}
+
+/* Venstre tekstkolonne */
+.product-card__extra-text {
+  flex: 1;
+}
+
+.product-card__extra-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.product-card__extra-copy {
+  margin: 0 0 0.6rem;
+  color: #6b5f50;
+  line-height: 1.4;
+}
+
+/* Prislinje */
+.product-card__extra-prices {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.product-card__extra-price {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.product-card__extra-price-old {
+  font-size: 0.85rem;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Højre produktbillede */
+.product-card__extra-media {
+  flex: 0 0 auto;
+  width: 80px;
+  height: auto;
+  background: transparent; /* fjerner den mørke grønne boks */
+}
+
+.product-card__extra-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* række med grøn qty + lys knap */
+.product-buy-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+/* grøn [- 1 +] boks */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 120px;
+  padding: 0.6rem 0.9rem;
+  background-color: #2f4a33;
+  color: #fff;
+  border-radius: 0.8rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.qty-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0 0.4rem;
+}
+
+.qty-number {
+  font-weight: 500;
+}
+
+/* lys “Læg i kurv” */
+.add-to-cart-btn {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid #bcb3a5;
+  background-color: #ede6d8;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #e7dfcf;
+  transform: translateY(-1px);
+}
+
+/* ACCORDIONS – generelle */
+.product-accordions {
+  padding: 0.5rem 1rem 0.5rem;
+}
+
+/* Når accordions ligger inde i produktkortet skal de flugte med teksten */
+.product-card .product-accordions {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.accordion {
+  width: 100%;
+  text-align: left;
+  background-color: var(--prod-card-bg);
+  border: 1px solid var(--prod-border-soft);
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font: inherit;
+  cursor: pointer;
+}
+
+.accordion__icon {
+  margin-left: 0.8rem;
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 0.8rem;
+  margin-top: -0.3rem;
+  margin-bottom: 0.4rem;
+  padding: 0 0.9rem;
+  opacity: 0;
+}
+
+.accordion__content p,
+.accordion__content ul {
+  font-size: 0.85rem;
+  color: white;
+  padding: 0.6rem 0 0.7rem;
+}
+
+/* Når den er åben */
+.accordion__content.accordion__content--open {
+  opacity: 1;
+}
+
+/* ======================================
+   OVERSKRIV ACCORDIONS INDE I PRODUKTKORTET
+   Så de får linje-look som FAQ
+   ====================================== */
+
+.product-card .accordion {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0.9rem 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+/* Første accordion får top-linje */
+.product-card .accordion:first-of-type {
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+/* Content tilpasses så det matcher FAQ-stilen */
+.product-card .accordion__content {
+  background-color: transparent;
+  margin: 0;
+  padding: 0.5rem 0 1rem;
+}
+
+.product-card .accordion__content p,
+.product-card .accordion__content ul {
+  padding: 0;
+  color: #4d4943;
+}
+
+/* Grøn hero-del med billede + accordions */
+.product-story {
+  margin-top: 2rem;
+  background-color: #172807;
+  color: #f9f4e6;
+}
+
+.product-story__image {
+  height: 260px;
+  overflow: hidden;
+}
+
+.product-story__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+}
+
+/* Accordions på grøn baggrund – Seed style linjer */
+.product-accordions--on-green {
+  padding: 1.5rem 1.5rem 1.8rem;
+}
+
+.accordion--on-green {
+  background-color: transparent;
+  color: #f9f4e6;
+  border: none;
+  border-radius: 0;
+  padding: 0.9rem 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.product-accordions--on-green .accordion--on-green:first-of-type {
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.accordion--on-green + .accordion__content {
+  background-color: transparent;
+  margin: 0;
+  padding: 0.4rem 0 0.8rem;
+  color: #f6f1e2;
+}
+/* ======================================
+   ANDRE KØBTE OGSÅ – SLIDER
+   ====================================== */
+
+.related-products {
+  padding: 3rem 2rem;
+  background-color: #f3e4cf;
+  margin: 3rem auto;
+
+  max-width: 1200px;
+}
+
+.related-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #15341d;
+}
+
+/* Wrapper med pile + track */
+.related-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Selve “sporet” man scroller på */
+.related-track {
+  display: flex;
+  gap: 1.6rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 0 2.5rem; /* plads til pile */
+}
+
+/* skjul grim scrollbar, men stadig scroll/swipe */
+.related-track::-webkit-scrollbar {
+  display: none;
+}
+.related-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Kortene */
+.related-item {
+  scroll-snap-align: start;
+  background: #fff9f0;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 210px; /* gør at der kan stå ca. 5 på en række */
+}
+
+.related-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.related-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #15341d;
+}
+
+.related-brand {
+  font-size: 0.9rem;
+  color: #6d6559;
+}
+
+.related-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+.related-btn {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background-color: #2f4a33;
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: opacity 0.2s ease;
+}
+
+.related-btn:hover {
+  opacity: 0.85;
+}
+
+/* Pile-knapper */
+.related-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: none;
+  background-color: #f8f1dd;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #15341d;
+  z-index: 2;
+}
+
+.related-arrow--left {
+  left: 0;
+}
+
+.related-arrow--right {
+  right: 0;
+}
+
+.related-arrow:hover {
+  background-color: #fff9f0;
+}
+
+/* Responsiv justering */
+@media (max-width: 700px) {
+  .related-products {
+    padding: 2.2rem 1.2rem;
+  }
+
+  .related-track {
+    padding: 0 2.2rem;
+  }
+
+  .related-item {
+    min-width: 70%;
+  }
+}
+
+/* EXPLAINER */
+.product-explainer {
+  background-color: #183822;
+  color: #f8f1dd;
+  padding: 1.5rem 1rem 1.8rem;
+}
+
+.product-explainer h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-explainer p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.product-explainer__capsules {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.capsule-block {
+  border-radius: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.7rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+/* HELP / FAQ – "Spørgsmål?" */
+.product-help {
+  width: 100%;
+  background-color: transparent;
+  padding: 3rem 1.5rem;
+}
+
+.product-help__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-help__text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-help__text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* FAQ-del til højre */
+.product-help__faq {
+  margin-top: 1.5rem;
+}
+
+/* Accordion-stil i FAQ (tynde linjer, ingen bokse) */
+.help-accordion {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0.9rem 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+}
+
+.product-help__faq .help-accordion:first-of-type {
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+/* overskriv generel accordion-content inde i FAQ */
+.product-help__faq .accordion__content {
+  background-color: transparent;
+  margin: 0;
+  padding: 0.4rem 0 0.8rem;
+}
+
+.product-help__faq .accordion__content p {
+  font-size: 0.9rem;
+  color: #4d4943;
+}
+
+/* "Se alle spørgsmål" knap */
+.help-all-btn {
+  margin-top: 1.2rem;
+  padding: 0.55rem 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background-color: #e3d7c4;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Skjulte FAQ-items */
+.faq-hidden {
+  display: none;
+}
+
+/* ANMELDELSER – NYT LAYOUT */
+
+.product-reviews {
+  margin-top: 2.5rem;
+  padding: 0 1rem 2.5rem;
+}
+
+.product-reviews__card {
+  background-color: #f6e5cd;
+  border-radius: 1rem;
+  padding: 1.6rem 1.4rem 1.8rem;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* Øverste del: samlet rating + fordeling */
+.product-reviews__top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product-reviews__summary {
+  text-align: left;
+}
+
+.product-reviews__title {
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.product-reviews__stars {
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2rem;
+}
+
+.product-reviews__score {
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+
+.product-reviews__label {
+  font-size: 0.85rem;
+  color: #6b655b;
+}
+
+.product-reviews__divider {
+  display: none; /* vises kun på desktop */
+}
+
+.product-reviews__distribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* Rækkerne med 5★–1★ */
+.review-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.review-bar {
+  height: 4px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.review-bar span {
+  display: block;
+  height: 100%;
+  background-color: #3b7d57;
+}
+
+.review-count {
+  font-size: 0.8rem;
+  color: #5e5a54;
+}
+
+/* Vandret streg */
+.product-reviews__line {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 1.4rem 0 1.2rem;
+}
+
+/* Liste med “fake” anmeldelser */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.review-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-item__header h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.review-item__stars {
+  font-size: 0.95rem;
+}
+
+.review-item__meta {
+  font-size: 0.8rem;
+  color: #7b746b;
+  margin: 0.1rem 0 0.3rem;
+}
+
+.review-item__text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Knap nederst */
+.product-reviews__button {
+  margin-top: 1.2rem;
+  align-self: center;
+  padding: 0.75rem 2rem;
+  border-radius: 999px; /* super rund */
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: #fff9f0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #3b3a36;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.product-reviews__button:hover {
+  background-color: #f2e7d6;
+  border-color: rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.product-reviews__button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer lidt smallere på denne side */
+.site-footer {
+  margin-top: 2rem;
+}
+
+/* =========================
+   D3 KAPSEL SEKTION
+   ========================= */
+
+.d3-tech {
+  background-color: #102b16; /* mørk grøn, matcher pillen bedre */
+  color: #f8f1dd;
+  padding: 3.5rem 0 4rem;
+}
+
+.d3-tech__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.3fr) minmax(0, 0.8fr);
+  column-gap: 3rem;
+  align-items: center;
+}
+
+/* Venstre kolonne */
+
+.d3-tech__heading {
+  font-size: 2.4rem;
+  line-height: 1.15;
+  margin: 0 0 1.3rem;
+}
+
+.d3-tech__body {
+  font-size: 0.98rem;
+  max-width: 26rem;
+  line-height: 1.5;
+  margin: 0 0 1.8rem;
+}
+
+/* CTA-knap – mere “brandet” */
+
+.d3-tech__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: #f8f1dd;
+  color: #15341d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.d3-tech__cta:hover {
+  background-color: #fff7de;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* Midterkolonne – egenskaber */
+
+.d3-tech__features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+
+.d3-tech__feature h3 {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 0.2rem;
+}
+
+.d3-tech__feature p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 22rem;
+}
+
+/* Lille “dotted line” effekt mellem features */
+.d3-tech__feature {
+  position: relative;
+  padding-bottom: 1.2rem;
+}
+
+.d3-tech__feature::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 120px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+}
+
+/* Sidste feature uden streg */
+.d3-tech__feature:last-child {
+  padding-bottom: 0;
+}
+
+.d3-tech__feature:last-child::after {
+  display: none;
+}
+
+/* Højre kolonne – pille */
+
+.d3-tech__pill {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.d3-tech__pill img {
+  width: 210px; /* justér hvis du vil have den større/mindre */
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.65));
+  /* en anelse glow / kontrast */
+  image-rendering: auto;
+}
+
+/* =========================
+   RESPONSIVT
+   ========================= */
+
+@media (max-width: 960px) {
+  .d3-tech {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .d3-tech__inner {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .d3-tech__heading {
+    font-size: 2rem;
+  }
+
+  .d3-tech__body {
+    max-width: 100%;
+  }
+
+  .d3-tech__pill {
+    justify-content: center;
+  }
+
+  .d3-tech__pill img {
+    width: 180px;
+  }
+
+  .d3-tech__features {
+    order: 3; /* først tekst, så pille, så features hvis du vil ombytte – fjern hvis ikke */
+  }
+}
+
+/***************************** DESKTOP VERSION ********************************/
+
+@media (min-width: 960px) {
+  /* Siden bredere på desktop */
+  .product-page {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .product-header__inner {
+    max-width: 1200px;
+    padding: 0.8rem 2rem;
+  }
+
+  .product-header__search {
+    max-width: 1200px;
+    padding: 0 2rem 1rem;
+  }
+
+  /* TOP: produktbillede + info-kort side om side */
+  .product-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+    align-items: flex-start;
+    column-gap: 3rem;
+    padding: 3rem 2.5rem 2.5rem;
+  }
+
+  .product-right {
+    padding-left: 0;
+    padding-right: 0;
+    display: block;
+  }
+
+  .product-media__thumbs {
+    margin-top: 1.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .thumb {
+    height: 150px;
+    background-color: #e3d4b9;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .product-card {
+    margin-top: 0;
+    padding: 1.8rem 1.7rem 1.5rem;
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.16);
+  }
+
+  .product-card__title {
+    font-size: 1.6rem;
+  }
+
+  .product-card__price {
+    font-size: 1.4rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .product-card__actions {
+    margin-top: 0.5rem;
+  }
+
+  .product-card .product-accordions {
+    margin-top: 0.8rem;
+  }
+
+  .product-card__extra {
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    background-color: #f9ecda;
+  }
+
+  /* Grøn sektion: billede til venstre, accordions til højre */
+  .product-story {
+    margin-top: 3rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: stretch;
+  }
+
+  .product-story__image {
+    height: auto;
+    min-height: 420px;
+  }
+
+  .product-accordions--on-green {
+    padding: 3rem 4rem 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Badges */
+  .product-badges {
+    max-width: 1200px;
+    margin: 1.8rem auto 0;
+    padding: 0 2rem;
+  }
+
+  .product-badges__card {
+    padding: 1.2rem 1.4rem;
+  }
+
+  /* Explainer */
+  .product-explainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 0;
+    padding: 2.2rem 2rem 2.4rem;
+  }
+
+  .product-explainer h2 {
+    font-size: 1.4rem;
+  }
+
+  .product-explainer__capsules {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  /* Spørgsmål-sektion – 2 kolonner */
+  .product-help {
+    padding: 4rem 2rem;
+  }
+
+  .product-help__inner {
+    max-width: 900px; /* smallere = tættere på midten */
+    margin: 0 auto; /* centrer hele blokken */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* mere balanced columns */
+    column-gap: 3rem;
+    align-items: start;
+    padding: 4rem 0;
+  }
+
+  /* Venstre side (tekst) */
+  .product-help__inner h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  /* Venstre side (tekst) */
+  .product-help__inner h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .product-help__inner p {
+    font-size: 1.35rem;
+    color: #3a352d;
+  }
+
+  /* højre kolonne: FAQ */
+
+  .product-help__faq {
+    grid-column: 2 / 3;
+    max-width: 480px;
+    justify-self: center; /* ikke helt ude i højre side */
+    margin-top: 0;
+  }
+
+  .product-help__text h2 {
+    font-size: 2.6rem;
+  }
+
+  .product-help__text p {
+    font-size: 1.4rem;
+  }
+
+  /* DESKTOP – samme stil som mockup */
+  .product-reviews {
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 2rem 3rem;
+  }
+
+  .product-reviews__card {
+    padding: 2.2rem 2.4rem 2.4rem;
+  }
+
+  .product-reviews__top {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .product-reviews__summary {
+    flex: 0 0 260px;
+    text-align: center;
+  }
+
+  .product-reviews__title {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .product-reviews__stars {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .product-reviews__divider {
+    display: block;
+    width: 1px;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0.14);
+  }
+
+  .product-reviews__distribution {
+    flex: 1;
+    max-width: 420px;
+  }
+
+  .reviews-list {
+    gap: 1.3rem;
+  }
+}
