@@ -111,6 +111,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .customerclub-banner h2 {
@@ -128,7 +130,7 @@ body {
 
 .banner-image {
   width: 100%;
-  height: 180px;
+  height: 350px;
   object-fit: cover;
 }
 
@@ -265,4 +267,9 @@ body {
 .footer-copy {
   text-align: right;
   margin-top: 30px;
+}
+
+.kontrol-rapport {
+  height: 20px;
+  float: left;
 }
