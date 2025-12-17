@@ -1,20 +1,159 @@
-/* =========================
-   FOOTER
-   ========================= */
+/* ===============================
+    HEADER (LOGO + IKONER)
+   =============================== */
 
+header {
+  background-color: #395228;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* Top container */
+.header-top {
+  position: relative;
+  width: 100%;
+  height: 80px;
+}
+
+/* Logo centreret */
+.logo {
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* CTA BUTTON STYLE */
+.cta_btn,
+.cta_btn2,
+.cta_btn3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.cta_btn {
+  right: 20px;
+}
+.cta_btn2 {
+  right: 60px;
+}
+.cta_btn3 {
+  right: 110px;
+}
+
+/* CTA billeder */
+.cta_btn img,
+.cta_btn2 img,
+.cta_btn3 img {
+  height: 2rem;
+  display: block;
+}
+
+/* Burger menu */
+#burger {
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ============ MENU ============ */
+
+/* Standard hidden menu */
+#menu {
+  display: none;
+  background-color: #395228;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+}
+
+/* Når menu er åben */
+#menu.open {
+  display: block;
+}
+
+/* Menu links */
+#menu a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+}
+
+/* Dropdown søgning */
+.search-dropdown {
+  display: none;
+  width: 100%;
+  padding-inline: 10px;
+  position: static;
+  z-index: 999;
+}
+
+.search-dropdown input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* ============ POPOVER (KURV + LOGIN) ============ */
+
+/* Grund-styling for alle popovers */
+[data-popover] {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  transform: translate(-100%, 0); /* skub helt ud til højre */
+  opacity: 0;
+  width: 0; /* skjult som standard */
+  height: 80%;
+  overflow: auto;
+
+  background-color: #f4ecd7; /* match din sidebaggrund */
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 1500;
+
+  transition: opacity 0.2s ease, transform 0.4s ease, width 0.4s ease;
+}
+
+/* Når popover er "åben" (styres af JS via data-open) */
+[data-popover][data-open] {
+  opacity: 1;
+  width: 40%; /* samme som du havde før i :popover-open */
+}
+
+/* ========================= FOOTER ========================= */
 .site-footer {
   margin-top: 3rem;
-  background-color: #183822; /* mørk grøn */
+  background-color: #183822;
   color: #f8f1dd;
   padding: 3rem 1.5rem 2.5rem;
 }
-
 .site-footer__inner {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   gap: 2rem;
-  /* Grid med 5 kolonner: brand, 3 link-kolonner, nyhedsbrev */
   grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)) minmax(
       0,
       1.6fr
@@ -27,57 +166,43 @@
   font-size: 1.05rem;
   margin-bottom: 0.7rem;
 }
-
 .site-footer__column p,
 .site-footer__column li,
 .site-footer__column a {
   font-size: 0.9rem;
 }
-
 .site-footer__column ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .site-footer__column li + li {
   margin-top: 0.25rem;
-}
-
-/* Brand-kolonne */
+} /* Brand-kolonne */
 .site-footer__column--brand p {
   max-width: 16rem;
   line-height: 1.5;
-}
-
-/* Nyhedsbrevskolonne får max-bredde */
+} /* Nyhedsbrevskolonne får max-bredde */
 .site-footer__column--newsletter {
   max-width: 260px;
-}
-
-/* Links */
+} /* Links */
 .site-footer a {
   color: #f8f1dd;
   text-decoration: none;
 }
-
 .site-footer a:hover {
   text-decoration: underline;
-}
-
-/* Nyhedsbrev – tekst over input */
+} /* Nyhedsbrev – tekst over input */
 .footer-newsletter__text {
   font-size: 0.85rem;
   margin-bottom: 0.7rem;
   opacity: 0.85;
-}
-
-/* Nyhedsbrev – række med input + knap */
+} /* Nyhedsbrev – række med input + knap */
 .footer-newsletter__row {
   display: flex;
   gap: 0.5rem;
+  font: inherit;
 }
-
 .footer-newsletter input[type="email"] {
   flex: 1;
   padding: 0.55rem 0.8rem;
@@ -85,12 +210,11 @@
   background-color: rgba(0, 0, 0, 0.16);
   color: #f8f1dd;
   font-size: 0.85rem;
+  font: inherit;
 }
-
 .footer-newsletter input::placeholder {
   color: rgba(248, 241, 221, 0.7);
 }
-
 .footer-newsletter button[type="submit"] {
   padding: 0.55rem 1.2rem;
   border: none;
@@ -101,15 +225,13 @@
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease,
     box-shadow 0.2s ease;
+  font: inherit;
 }
-
 .footer-newsletter button[type="submit"]:hover {
   background-color: #fff7e5;
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-/* Trust-linje med små tjekmærker nederst i footeren */
+} /* Trust-linje med små tjekmærker nederst i footeren */
 .site-footer__trust-row {
   max-width: 1200px;
   margin: 2rem auto 0;
@@ -120,9 +242,7 @@
   gap: 0.8rem 2rem;
   font-size: 0.85rem;
   opacity: 0.9;
-}
-
-/* Bundlinje – copyright + legal-links */
+} /* Bundlinje – copyright + legal-links */
 .site-footer__bottom-row {
   max-width: 1200px;
   margin: 1.2rem auto 0;
@@ -136,55 +256,41 @@
   font-size: 0.8rem;
   opacity: 0.9;
 }
-
 .site-footer__legal-nav {
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
-
 .site-footer__legal-nav span {
   opacity: 0.7;
 }
 
-/* =========================
-   FOOTER – RESPONSIV
-   ========================= */
-
-/* Tablet: 2 kolonner i stedet for 5 */
+/* ========================= FOOTER – RESPONSIV ========================= */
 @media (max-width: 900px) {
   .site-footer__inner {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
-
-/* Mobil: 1 kolonne og stakket trust/bundlinje */
+} /* Mobil: 1 kolonne og stakket trust/bundlinje */
 @media (max-width: 640px) {
   .site-footer {
     padding: 2.5rem 1.2rem 2rem;
   }
-
   .site-footer__inner {
     grid-template-columns: minmax(0, 1fr);
   }
-
   .site-footer__column--brand,
   .site-footer__column--newsletter {
     max-width: none;
   }
-
   .site-footer__trust-row {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .site-footer__bottom-row {
     flex-direction: column;
     align-items: flex-start;
   }
-}
-
-/* Lille ekstra spacing ned til footeren under produkt-reviews */
+} /* Lille ekstra spacing ned til footeren under produkt-reviews */
 .product-reviews {
   margin-bottom: 3.5rem; /* ekstra afstand til footer */
 }
