@@ -12,16 +12,72 @@ body {
 }
 header {
   background-color: #395228;
-  height: 100px;
   position: sticky;
   top: 0;
   z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
 }
+.header-top {
+  position: relative;
+  width: 100%;
+  height: 80px;
+}
+
 .logo {
-  height: 120%;
-  max-height: 180px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cta_btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.cta_btn2 {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.cta_btn3 {
+  position: absolute;
+  right: 110px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.cta_btn img {
+  height: 2rem;
   display: block;
-  margin-inline: auto;
+}
+.cta_btn2 img {
+  height: 2rem;
+  display: block;
+}
+.cta_btn3 img {
+  height: 2rem;
+  display: block;
 }
 body {
   background-color: #d6cfbe;
@@ -103,9 +159,34 @@ h1 {
   .hero1 {
     display: none;
   }
+  #burger {
+    display: none !important;
+  }
+  #menu {
+    position: static !important;
+    display: flex !important;
+    justify-content: center;
+    gap: 30px;
+
+    margin-top: 10px;
+  }
+  #menu a {
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
-/* *********** */
+#menu a {
+  color: white;
+  padding: 0;
+}
+
 #burger {
   position: absolute;
   left: 20px;
@@ -139,18 +220,46 @@ h1 {
   display: block;
 }
 
-@media (min-width: 900px) {
-  #burger {
-    display: none !important;
-  }
-  #menu {
-    display: flex !important;
-    justify-content: center;
-    gap: 20px;
-  }
+[popover] {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  transform: translate(-100%, 0%);
+  opacity: 0;
+  transition: opacity 0.2s ease, 0.4s ease;
+}
 
-  #menu a {
-    color: white;
-    padding: 0;
+:popover-open {
+  opacity: 1;
+  width: 40%;
+  height: 80%;
+  @starting-style {
+    opacity: 0;
+    width: 0;
+    height: 80%;
   }
+}
+
+#popup_kurv > p {
+  text-align: center;
+  margin-block: 50%;
+}
+#popup_login > p {
+  text-align: center;
+  margin-block: 50%;
+}
+
+.search-dropdown {
+  display: none;
+  width: 100%;
+  padding-inline: 10px;
+  position: static;
+  z-index: 999;
+}
+
+.search-dropdown input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
 }
