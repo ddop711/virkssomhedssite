@@ -4,30 +4,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Sikrer at siden ikke bliver indekseret (krav fra skole) -->
+    <meta name="robots" content="noindex">
+
+    <!-- Sidetitel (vises i browser-fanen) -->
     <title>B12 vitamin 500 mcg | Helsam</title>
 
-    <!-- Fælles styles -->
-    <link rel="stylesheet" href="css/base.css" />
+    <!-- Fælles styles til hele sitet -->
+    <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/components.css" />
 
-    <!-- Sidespecifik CSS -->
+    <!-- Sidespecifik CSS til denne produktside -->
     <link rel="stylesheet" href="css/individuel_produktside.css" />
+
+    <!-- Favicon til fanen -->
+    <link rel="icon" type="image/png" href="img/Favicon.webp">
 </head>
 
 <body>
-    <!-- HEADER -->
+    <!-- HEADER / TOPNAVIGATION -->
     <header class="site-header product-header">
         <div class="product-header__inner">
+            <!-- Burger-menu ikon (mobilnavigation) -->
             <button class="icon-button" aria-label="Åbn menu">
                 ☰
             </button>
 
+            <!-- Logo-link tilbage til forsiden -->
             <a href="index.html" class="product-header__logo">
                 <span class="product-header__logo-mark">H</span>
                 <span class="product-header__logo-text">Helsam</span>
             </a>
 
+            <!-- Ikoner til søg og kurv -->
             <div class="product-header__icons">
                 <button class="icon-button" aria-label="Søg">
                     🔍
@@ -39,15 +49,18 @@
         </div>
     </header>
 
+    <!-- SIDEINDHOLD -->
     <main class="product-page">
-        <!-- HERO: Billeder + produktinfo + øverste accordions -->
+        <!-- HERO-SEKTION: Produktbilleder + primær produktinfo -->
         <section class="product-hero">
-            <!-- VENSTRE SIDE: BILLEDER -->
+            <!-- VENSTRE SIDE: PRODUKTBILLEDER -->
             <div class="product-media">
+                <!-- Stort hovedbillede -->
                 <div class="product-media__main">
                     <img src="Images/D3.webp" alt="D3 vitamin produktbillede" />
                 </div>
 
+                <!-- Thumbnail-billeder under hovedbilledet -->
                 <div class="product-media__thumbs">
                     <div class="thumb">
                         <img src="Images/D3HAND.webp" alt="D3 vitamin i håndfladen" />
@@ -61,55 +74,109 @@
                 </div>
             </div>
 
-            <!-- HØJRE SIDE: PRODUKTKORT + ACCORDIONS -->
+            <!-- HØJRE SIDE: PRODUKTKORT, KØBSINFO + ACCORDIONS -->
             <div class="product-right">
                 <article class="product-card">
+                    <!-- Brand / serie-label -->
                     <p class="product-card__label">Grønne dfi vitaminer</p>
+
+                    <!-- Produktnavn -->
                     <h1 class="product-card__title">B12 vitamin 500 mcg</h1>
+
+                    <!-- Kort beskrivelse -->
                     <p class="product-card__subtitle">
-                        Stærk D3-vitamin med 90 mcg pr kapsel i form af cholecalciferol - opløst i olivenolie.
+                        Stærk D3-vitamin med 90 mcg pr kapsel i form af cholecalciferol – opløst i olivenolie.
                         D-vitamin bidrager bl.a. til normal funktion af:
-                        • muskler
-                        • tænder/knogler
-                        • immunsystem
-                        • optagelse af kalk og fosfor
                     </p>
 
+                    <ul class="product-card__list">
+                        <li>muskler</li>
+                        <li>tænder/knogler</li>
+                        <li>immunsystem</li>
+                        <li>optagelse af kalk og fosfor</li>
+                    </ul>
+
+
+                    <!-- Info om kapsler og daglig dosis -->
                     <p class="product-card__info">120 kapsler • Daglig dosis: 1 kapsel</p>
+
+                    <!-- Pris -->
                     <p class="product-card__price">179,95 kr</p>
 
+                    <!-- KØBSHANDLINGER: antal, læg i kurv, lager osv. -->
                     <div class="product-card__actions">
                         <p class="product-card__qty-label">Antal</p>
 
+                        <!-- Antalsvælger + læg i kurv-knap i én række -->
                         <div class="product-buy-row">
+                            <!-- Antal-vælger (minus/plus) -->
                             <div class="quantity-selector">
                                 <button type="button" class="qty-btn">-</button>
                                 <span class="qty-number">1</span>
                                 <button type="button" class="qty-btn">+</button>
                             </div>
 
+                            <!-- Primær CTA: læg i kurv -->
                             <button type="button" class="add-to-cart-btn">
                                 Læg i kurv
                             </button>
                         </div>
-                        <div>
-                            <p>På lager - Levering 1-2 hverdage</p>
+
+                        <!-- KNAP: Åbner inline "tjek lager" panel -->
+                        <button type="button" class="check-store-btn">
+                            Tjek lager i butikker
+                        </button>
+
+                        <!-- INLINE LAGER-TJEK PANEL (vises/skjules med JS) -->
+                        <div class="store-check-inline" id="storeCheckInline">
+                            <div class="store-check-inline__header">
+                                <h3>Tjek lager i butikker</h3>
+                                <!-- Lukke-knap til panelet -->
+                                <button type="button" class="store-check-inline__close" aria-label="Luk">
+                                    ×
+                                </button>
+                            </div>
+
+                            <!-- Input til postnummer -->
+                            <label for="zipcode-inline">Indtast postnummer:</label>
+                            <div class="store-check-inline__row">
+                                <input id="zipcode-inline" type="text" placeholder="Fx 2200" />
+                                <button type="button" id="searchStoresInline">Søg</button>
+                            </div>
+
+                            <!-- Hjælpetekst til brugeren -->
+                            <p class="store-check-inline__helper">
+                                Vi viser de nærmeste Helsam-butikker og om varen er på lager.
+                            </p>
+
+                            <!-- Liste til resultater (butikker + lagerstatus) -->
+                            <ul class="store-list-inline"></ul>
+                        </div>
+
+                        <!-- Lagerstatus og leveringstekst under køb -->
+                        <div class="product-stock">
+                            <div class="stock-status">
+                                <span class="stock-dot"></span>
+                                <span>På lager</span>
+                            </div>
+                            <p class="delivery-text">Levering 1–2 hverdage</p>
                         </div>
                     </div>
-                    <!-- ØVRE ACCORDIONS -->
+
+                    <!-- ØVERSTE PRODUKT-ACCORDIONS (brug, ingredienser, dosis) -->
                     <section class="product-accordions">
+                        <!-- Accordion: Anvendelse -->
                         <button class="accordion">
-                            <span>Fordele</span>
+                            <span>Anvendelse</span>
                             <span class="accordion__icon">⌄</span>
                         </button>
                         <div class="accordion__content">
-                            <ul>
-                                <li>Støtter en sund tarmflora</li>
-                                <li>Indeholder både pro- og præbiotika</li>
-                                <li>Udviklet til daglig brug</li>
-                            </ul>
+                            <p>
+                                Anvendes som supplement til en varieret kost og sund livsstil.
+                            </p>
                         </div>
 
+                        <!-- Accordion: Ingredienser -->
                         <button class="accordion">
                             <span>Ingredienser</span>
                             <span class="accordion__icon">⌄</span>
@@ -121,6 +188,7 @@
                             </p>
                         </div>
 
+                        <!-- Accordion: Daglig dosis -->
                         <button class="accordion">
                             <span>Daglig dosis</span>
                             <span class="accordion__icon">⌄</span>
@@ -133,7 +201,9 @@
                         </div>
                     </section>
 
+                    <!-- PAKKETILBUD / UPSELL-SEKTION -->
                     <div class="product-card__extra">
+                        <!-- Tekstdel (tilbudstekst + priser) -->
                         <div class="product-card__extra-text">
                             <p class="product-card__extra-label">
                                 Køb 2 stk og spar 25%
@@ -143,38 +213,47 @@
                                 Tilføj DM-02™ Daily Multivitamin til din rutine og spar på din første ordre.
                             </p>
 
+                            <!-- Tilbudspris + førpris -->
                             <div class="product-card__extra-prices">
-                                <span class="product-card__extra-price">420 kr.</span>
-                                <span class="product-card__extra-price-old">570 kr.</span>
+                                <span class="product-card__extra-price">270 kr.</span>
+                                <span class="product-card__extra-price-old">359,95 kr.</span>
                             </div>
+                            <button class="product-card__extra-btn">Tilføj til kurv</button>
+
                         </div>
 
+                        <!-- Billeddel (visualisering af pakkeløsningen) -->
                         <div class="product-card__extra-media">
                             <img src="Images/25pakke.webp" alt="D3 og B12 pakketilbud">
                         </div>
                     </div>
-
                 </article>
             </div>
         </section>
 
-        <!-- GRØN SEKTIONSHERO -->
+        <!-- GRØN STORY-SEKTION MED BILLEDE + ACCORDIONS -->
         <section class="product-story">
+            <!-- Produktbillede på grøn baggrund -->
             <div class="product-story__image">
                 <img src="Images/D3GRØN2.webp" alt="D3 i hånden">
             </div>
 
+            <!-- Accordions i grøn sektion (fordele, detaljer, opbevaring) -->
             <div class="product-accordions product-accordions--on-green">
+                <!-- Accordion: Fordele -->
                 <button class="accordion accordion--on-green">
-                    <span>Anvendelse</span>
+                    <span>Fordele</span>
                     <span class="accordion__icon">⌄</span>
                 </button>
                 <div class="accordion__content">
-                    <p>
-                        Anvendes som supplement til en varieret kost og sund livsstil.
-                    </p>
+                    <ul>
+                        <li>Støtter en sund tarmflora</li>
+                        <li>Indeholder både pro- og præbiotika</li>
+                        <li>Udviklet til daglig brug</li>
+                    </ul>
                 </div>
 
+                <!-- Accordion: Produktdetaljer -->
                 <button class="accordion accordion--on-green">
                     <span>Produktdetaljer</span>
                     <span class="accordion__icon">⌄</span>
@@ -186,6 +265,7 @@
                     </p>
                 </div>
 
+                <!-- Accordion: Opbevaring -->
                 <button class="accordion accordion--on-green">
                     <span>Opbevaring</span>
                     <span class="accordion__icon">⌄</span>
@@ -198,26 +278,21 @@
             </div>
         </section>
 
-        <!-- ANDRE KØBTE OGSÅ -->
+        <!-- "ANDRE KØBTE OGSÅ" – RELATERET PRODUKTKAROUSEL -->
         <section class="related-products">
+            <!-- Sektionstitel -->
             <h2 class="related-title">Andre købte også</h2>
 
+            <!-- Karousel-wrapper -->
             <div class="related-carousel">
+                <!-- Venstre pil -->
                 <button class="related-arrow related-arrow--left" aria-label="Se tidligere produkter">
                     ‹
                 </button>
 
+                <!-- Selve spor/track med produktkort -->
                 <div class="related-track">
-                    <!-- 1: B12 -->
-                    <article class="related-item">
-                        <img src="Images/B12.webp" alt="B12 vitamin 500 mcg">
-                        <h3 class="related-name">B12 vitamin 500 mcg</h3>
-                        <p class="related-brand">Grønne dfi vitaminer</p>
-                        <p class="related-price">179,95 kr</p>
-                        <button class="related-btn">Læg i kurv</button>
-                    </article>
-
-                    <!-- 2: B3 -->
+                    <!-- Produktkort: B3 -->
                     <article class="related-item">
                         <img src="Images/B3.webp" alt="B3 200 mg">
                         <h3 class="related-name">B3 200 mg</h3>
@@ -226,7 +301,7 @@
                         <button class="related-btn">Læg i kurv</button>
                     </article>
 
-                    <!-- 3: Urte-Pensil tabletter -->
+                    <!-- Produktkort: Urte-Pensil tabletter -->
                     <article class="related-item">
                         <img src="Images/Urtepensil.webp" alt="Urte-Pensil tabletter">
                         <h3 class="related-name">Urte-Pensil tabletter 180 stk</h3>
@@ -235,7 +310,7 @@
                         <button class="related-btn">Læg i kurv</button>
                     </article>
 
-                    <!-- 4: Urte-Pensil kapsler -->
+                    <!-- Produktkort: Urte-Pensil kapsler -->
                     <article class="related-item">
                         <img src="Images/Urtepensil2.webp" alt="Urte-Pensil kapsler">
                         <h3 class="related-name">Urte-Pensil 360 kapsler</h3>
@@ -244,7 +319,7 @@
                         <button class="related-btn">Læg i kurv</button>
                     </article>
 
-                    <!-- 5: A-vitamin -->
+                    <!-- Produktkort: A-vitamin -->
                     <article class="related-item">
                         <img src="Images/A.webp" alt="A-vitamin 1500 mcg">
                         <h3 class="related-name">A-vitamin 1500 mcg, 5000 ie</h3>
@@ -253,16 +328,7 @@
                         <button class="related-btn">Læg i kurv</button>
                     </article>
 
-                    <!-- 6: Zink Berthelsen -->
-                    <article class="related-item">
-                        <img src="Images/Zink.webp" alt="Zink Berthelsen">
-                        <h3 class="related-name">Zink Berthelsen</h3>
-                        <p class="related-brand">Berthelsen</p>
-                        <p class="related-price">179,95 kr</p>
-                        <button class="related-btn">Læg i kurv</button>
-                    </article>
-
-                    <!-- 7: Bio-Zink -->
+                    <!-- Produktkort: Bio-Zink -->
                     <article class="related-item">
                         <img src="Images/Biozink.webp" alt="Bio-Zink">
                         <h3 class="related-name">Bio-Zink</h3>
@@ -271,7 +337,7 @@
                         <button class="related-btn">Læg i kurv</button>
                     </article>
 
-                    <!-- 8: Citron & Ingefær te -->
+                    <!-- Produktkort: Citron & Ingefær te -->
                     <article class="related-item">
                         <img src="Images/Citron.webp" alt="Citron & Ingefær te">
                         <h3 class="related-name">Citron & Ingefær Te Ø</h3>
@@ -280,7 +346,7 @@
                         <button class="related-btn">Læg i kurv</button>
                     </article>
 
-                    <!-- 9: Grøn te m. lime & ingefær -->
+                    <!-- Produktkort: Grøn te m. lime & ingefær -->
                     <article class="related-item">
                         <img src="Images/Lime.webp" alt="Grøn te med lime og ingefær">
                         <h3 class="related-name">Grøn Te m. Lime & Ingefær Ø</h3>
@@ -290,20 +356,17 @@
                     </article>
                 </div>
 
+                <!-- Højre pil -->
                 <button class="related-arrow related-arrow--right" aria-label="Se flere produkter">
                     ›
                 </button>
             </div>
         </section>
 
-
-
-
-
-        <!-- D3 KAPSEL SEKTION -->
+        <!-- D3 "TEKNIK"-SEKTION MED PILLE-ILLUSTRATION -->
         <section class="d3-tech">
             <div class="d3-tech__inner">
-                <!-- Venstre: tekst + CTA -->
+                <!-- Venstre kolonne: overskrift + brødtekst -->
                 <div class="d3-tech__left">
                     <h2 class="d3-tech__heading">
                         Mange får ikke nok D-vitamin.<br>
@@ -313,13 +376,9 @@
                         Vores D3-kapsel er udviklet til at blive optaget effektivt i kroppen, så du får
                         mest muligt ud af hver eneste dosis.
                     </p>
-
-                    <button class="d3-tech__cta">
-                        D3-kapsel teknologi
-                    </button>
                 </div>
 
-                <!-- Midten: egenskaber -->
+                <!-- Midterkolonne: tre features om kapslen -->
                 <div class="d3-tech__features">
                     <div class="d3-tech__feature">
                         <h3>Ydre del af kapsel</h3>
@@ -343,19 +402,17 @@
                     </div>
                 </div>
 
-                <!-- Højre: pille -->
+                <!-- Højre kolonne: pillebillede -->
                 <div class="d3-tech__pill">
                     <img src="Images/Pille.webp" alt="Gul D3-kapsel">
                 </div>
             </div>
         </section>
 
-
-
-        <!-- SPØRGSMÅL / FORM -->
+        <!-- FAQ / SPØRGSMÅL-SEKTION -->
         <section class="product-help">
             <div class="product-help__inner">
-                <!-- Venstre side: tekst -->
+                <!-- Venstre side: introduktionstekst -->
                 <div class="product-help__text">
                     <h2>Spørgsmål?</h2>
                     <p>Vi er her for at hjælpe.</p>
@@ -363,7 +420,7 @@
 
                 <!-- Højre side: FAQ-accordions -->
                 <div class="product-help__faq">
-
+                    <!-- FAQ: Fordele -->
                     <button class="accordion help-accordion">
                         <span>Hvad er fordelene ved dette kosttilskud?</span>
                         <span class="accordion__icon">⌄</span>
@@ -377,6 +434,7 @@
                         </p>
                     </div>
 
+                    <!-- FAQ: Hvordan og hvornår -->
                     <button class="accordion help-accordion">
                         <span>Hvordan og hvornår bør jeg tage produktet?</span>
                         <span class="accordion__icon">⌄</span>
@@ -390,6 +448,7 @@
                         </p>
                     </div>
 
+                    <!-- FAQ: Sammen med andre vitaminer -->
                     <button class="accordion help-accordion">
                         <span>Kan jeg tage dette kosttilskud sammen med andre vitaminer?</span>
                         <span class="accordion__icon">⌄</span>
@@ -403,6 +462,7 @@
                         </p>
                     </div>
 
+                    <!-- FAQ: Hvor hurtigt effekt -->
                     <button class="accordion help-accordion">
                         <span>Hvor hurtigt kan jeg forvente effekt?</span>
                         <span class="accordion__icon">⌄</span>
@@ -416,6 +476,7 @@
                         </p>
                     </div>
 
+                    <!-- FAQ: Vegansk/vegetarisk -->
                     <button class="accordion help-accordion">
                         <span>Er produktet vegansk eller vegetarisk?</span>
                         <span class="accordion__icon">⌄</span>
@@ -429,6 +490,7 @@
                         </p>
                     </div>
 
+                    <!-- FAQ: Gravide/ammende -->
                     <button class="accordion help-accordion">
                         <span>Kan gravide eller ammende tage dette kosttilskud?</span>
                         <span class="accordion__icon">⌄</span>
@@ -441,6 +503,7 @@
                         </p>
                     </div>
 
+                    <!-- FAQ: Opbevaring -->
                     <button class="accordion help-accordion">
                         <span>Hvordan skal produktet opbevares?</span>
                         <span class="accordion__icon">⌄</span>
@@ -453,6 +516,7 @@
                         </p>
                     </div>
 
+                    <!-- FAQ: Bivirkninger -->
                     <button class="accordion help-accordion">
                         <span>Er der bivirkninger ved produktet?</span>
                         <span class="accordion__icon">⌄</span>
@@ -466,6 +530,7 @@
                         </p>
                     </div>
 
+                    <!-- Knap til at se flere/spørge mere (link-agtig CTA) -->
                     <button class="help-all-btn">
                         Se alle spørgsmål
                     </button>
@@ -473,13 +538,12 @@
             </div>
         </section>
 
-
-
-        <!-- ANMELDELSER -->
+        <!-- ANMELDELSER / REVIEW-SEKTION -->
         <section class="product-reviews">
             <div class="product-reviews__card">
+                <!-- Øverste del: samlet rating + fordeling -->
                 <div class="product-reviews__top">
-                    <!-- Venstre side: samlet rating -->
+                    <!-- Venstre: samlet bedømmelse -->
                     <div class="product-reviews__summary">
                         <h2 class="product-reviews__title">Anmeldelser</h2>
                         <div class="product-reviews__stars">★★★★★</div>
@@ -487,10 +551,10 @@
                         <p class="product-reviews__label">Baseret på 1248 anmeldelser</p>
                     </div>
 
-                    <!-- Lodret streg -->
+                    <!-- Lodret dekorativ streg -->
                     <div class="product-reviews__divider" aria-hidden="true"></div>
 
-                    <!-- Højre side: fordeling -->
+                    <!-- Højre: fordeling på stjerner med bars -->
                     <div class="product-reviews__distribution">
                         <div class="review-row">
                             <span>5 ★</span>
@@ -530,11 +594,12 @@
                     </div>
                 </div>
 
-                <!-- Vandret streg -->
+                <!-- Vandret adskillelseslinje -->
                 <hr class="product-reviews__line" />
 
-                <!-- “Falske” anmeldelser -->
+                <!-- Liste af “fake” enkeltanmeldelser som eksempel -->
                 <div class="reviews-list">
+                    <!-- Review 1 -->
                     <article class="review-item">
                         <header class="review-item__header">
                             <h3>Louise</h3>
@@ -546,6 +611,7 @@
                         </p>
                     </article>
 
+                    <!-- Review 2 -->
                     <article class="review-item">
                         <header class="review-item__header">
                             <h3>Anders</h3>
@@ -558,6 +624,7 @@
                         </p>
                     </article>
 
+                    <!-- Review 3 -->
                     <article class="review-item">
                         <header class="review-item__header">
                             <h3>Sofie</h3>
@@ -570,38 +637,99 @@
                         </p>
                     </article>
 
+                    <!-- Knap til at se alle anmeldelser -->
                     <button class="product-reviews__button">
                         Læs alle anmeldelser
                     </button>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER / SIDEFOD -->
     <footer class="site-footer">
         <div class="site-footer__inner">
-            <div class="site-footer__column">
+            <!-- Kolonne: brand / kort intro -->
+            <div class="site-footer__column site-footer__column--brand">
                 <h3>Helsam</h3>
                 <p>Din partner til en sundere livsstil.</p>
             </div>
+
+            <!-- Kolonne: produktkategorier -->
+            <div class="site-footer__column">
+                <h3>Køb hos Helsam</h3>
+                <ul>
+                    <li><a href="#">Kosttilskud</a></li>
+                    <li><a href="#">Vitaminer</a></li>
+                    <li><a href="#">Hudpleje</a></li>
+                    <li><a href="#">Fødevarer</a></li>
+                    <li><a href="#">Personlig pleje</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolonne: kundeservice-links -->
             <div class="site-footer__column">
                 <h3>Kundeservice</h3>
                 <ul>
                     <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Hjælp | FAQ</a></li>
                     <li><a href="#">Handelsbetingelser</a></li>
+                    <li><a href="#">Retur & fortrydelse</a></li>
                 </ul>
             </div>
+
+            <!-- Kolonne: inspiration -->
             <div class="site-footer__column">
+                <h3>Inspiration</h3>
+                <ul>
+                    <li><a href="#">Artikler</a></li>
+                    <li><a href="#">Opskrifter</a></li>
+                    <li><a href="#">Butikker</a></li>
+                    <li><a href="#">Klub Helsam</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolonne: nyhedsbrev -->
+            <div class="site-footer__column site-footer__column--newsletter">
                 <h3>Nyhedsbrev</h3>
-                <button class="btn btn--ghost">Tilmeld dig</button>
+                <p class="footer-newsletter__text">
+                    Få nyheder, tilbud og sundhedsinspiration direkte i din indbakke.
+                </p>
+
+                <!-- Simpel form (ikke forbundet til backend) -->
+                <form class="footer-newsletter">
+                    <label for="newsletter-email" class="visually-hidden">E-mail</label>
+                    <div class="footer-newsletter__row">
+                        <input id="newsletter-email" type="email" placeholder="Din e-mail" required />
+                        <button type="submit">Tilmeld</button>
+                    </div>
+                </form>
             </div>
         </div>
-        <p class="site-footer__bottom">© 2025 Helsam – studenterprojekt</p>
+
+        <!-- Række med trust-claims -->
+        <div class="site-footer__trust-row">
+            <span>✔ Naturlige produkter</span>
+            <span>✔ Sikker betaling</span>
+            <span>✔ Personlig rådgivning i butik</span>
+        </div>
+
+        <!-- Nederste footerlinje -->
+        <div class="site-footer__bottom-row">
+            <p>© 2025 Helsam – studenterprojekt</p>
+            <nav class="site-footer__legal-nav">
+                <a href="#">Persondatapolitik</a>
+                <span aria-hidden="true">•</span>
+                <a href="#">Cookiepolitik</a>
+                <span aria-hidden="true">•</span>
+                <a href="#">Handelsbetingelser</a>
+            </nav>
+        </div>
     </footer>
 
+    <!-- JavaScript til bl.a. accordions, lager-tjek osv. -->
     <script src="js/main.js"></script>
+
 </body>
 
 </html>
