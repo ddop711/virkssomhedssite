@@ -1,0 +1,203 @@
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+  margin-top: 3rem;
+  background-color: #183822; /* mørk grøn */
+  color: #f8f1dd;
+  padding: 3rem 1.5rem 2.5rem;
+}
+
+.site-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  /* Grid med 5 kolonner: brand, 3 link-kolonner, nyhedsbrev */
+  grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)) minmax(
+      0,
+      1.6fr
+    );
+  align-items: flex-start;
+}
+
+/* Kolonneoverskrifter */
+.site-footer__column h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+}
+
+.site-footer__column p,
+.site-footer__column li,
+.site-footer__column a {
+  font-size: 0.9rem;
+}
+
+.site-footer__column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer__column li + li {
+  margin-top: 0.25rem;
+}
+
+/* Brand-kolonne */
+.site-footer__column--brand p {
+  max-width: 16rem;
+  line-height: 1.5;
+}
+
+/* Nyhedsbrevskolonne får max-bredde */
+.site-footer__column--newsletter {
+  max-width: 260px;
+}
+
+/* Links */
+.site-footer a {
+  color: #f8f1dd;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Nyhedsbrev – tekst over input */
+.footer-newsletter__text {
+  font-size: 0.85rem;
+  margin-bottom: 0.7rem;
+  opacity: 0.85;
+}
+
+/* Nyhedsbrev – række med input + knap */
+.footer-newsletter__row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-newsletter input[type="email"] {
+  flex: 1;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(248, 241, 221, 0.7);
+  background-color: rgba(0, 0, 0, 0.16);
+  color: #f8f1dd;
+  font-size: 0.85rem;
+}
+
+.footer-newsletter input::placeholder {
+  color: rgba(248, 241, 221, 0.7);
+}
+
+.footer-newsletter button[type="submit"] {
+  padding: 0.55rem 1.2rem;
+  border: none;
+  background-color: #f8f1dd;
+  color: #183822;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease;
+}
+
+.footer-newsletter button[type="submit"]:hover {
+  background-color: #fff7e5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Trust-linje med små tjekmærker nederst i footeren */
+.site-footer__trust-row {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(248, 241, 221, 0.25);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 2rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Bundlinje – copyright + legal-links */
+.site-footer__bottom-row {
+  max-width: 1200px;
+  margin: 1.2rem auto 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(248, 241, 221, 0.18);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.site-footer__legal-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.site-footer__legal-nav span {
+  opacity: 0.7;
+}
+
+/* =========================
+   FOOTER – RESPONSIV
+   ========================= */
+
+/* Tablet: 2 kolonner i stedet for 5 */
+@media (max-width: 900px) {
+  .site-footer__inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobil: 1 kolonne og stakket trust/bundlinje */
+@media (max-width: 640px) {
+  .site-footer {
+    padding: 2.5rem 1.2rem 2rem;
+  }
+
+  .site-footer__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .site-footer__column--brand,
+  .site-footer__column--newsletter {
+    max-width: none;
+  }
+
+  .site-footer__trust-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-footer__bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Lille ekstra spacing ned til footeren under produkt-reviews */
+.product-reviews {
+  margin-bottom: 3.5rem; /* ekstra afstand til footer */
+}
+
+/* Ekstra justering af footer */
+.site-footer {
+  margin-top: 3rem;
+  padding: 3.5rem 1.5rem 2.5rem;
+}
+
+/* Justerer trust-linje til at være centreret i den endelige version */
+.site-footer__trust-row {
+  justify-content: center;
+  text-align: center;
+  opacity: 0.8;
+}
