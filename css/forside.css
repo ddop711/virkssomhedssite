@@ -6,20 +6,35 @@
   box-sizing: border-box;
 }
 
+:root {
+  --prod-bg-beige: #d6cfbe;
+  --prod-bg-green: #395228;
+}
+
 /* HEADER */
+
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: transparent;
+  z-index: 1000; /* sørger for at headeren er over videoen */
 }
 
 .header-content {
   padding: 12px 16px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* knapper */
+/* Logo */
+.logo img {
+  height: 70px;
+}
+
+/* Header buttons */
 .burger-btn,
 .search-btn,
 .cart-btn {
@@ -35,40 +50,59 @@
   width: 24px;
 }
 
-/* logo */
-.logo img {
-  height: 70px;
-}
-
-/* højre ikoner */
+/* Højre ikoner */
 .header-icons {
   display: flex;
   gap: 12px;
 }
 
-/****************************************** BODY ******************************************/
-/****************** HERO-SEKTION ******************/
-
 body {
-  background-color: #d6cfbe;
+  background-color: var(--prod-bg-beige);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  position: relative;
+  height: 60vh;
 }
 
 .hero-video {
   width: 100%;
-  height: 60vh;
+  height: 100%;
   object-fit: cover;
+  display: block; /* fjerner beige streg */
 }
 
-.hero {
-  position: relative;
-}
-
+/* HERO LOGO OVEN PÅ VIDEO */
 .hero-logo {
+  height: 180px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* centerer logoet */
-  height: 100px;
+  transform: translate(-50%, -50%);
+}
+
+/* Header buttons */
+.burger-btn,
+.search-btn,
+.cart-btn {
+  background: none;
+  border: none;
+  min-height: 36px;
+}
+
+.burger-btn img,
+.search-btn img,
+.cart-btn img {
+  height: 24px;
+  width: 24px;
+}
+
+/* Højre ikoner */
+.header-icons {
+  display: flex;
+  gap: 12px;
 }
 
 /****************** KATEGORI-SEKTION *******************/
@@ -94,7 +128,6 @@ body {
   width: 100%;
   height: 140px;
   object-fit: cover;
-  background-color: #f2f2f2;
 }
 
 .category-card p {

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/forside.css">
-    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/general.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
         <!-- Hero video -->
         <section class="hero">
             <video class="hero-video" autoplay muted loop playsinline>
-                <source src="" type="video/mp4">
+                <source src="video/Helsamvideo.mp4" type="video/mp4">
             </video>
 
             <!-- Logo ovenpå video -->
@@ -131,94 +131,90 @@
         </section>
     </main>
 
-
-
-    <footer class="footer">
-
-        <div class="footer-container">
-
-            <!-- Venstre side (logo+link-grupper) -->
-            <div class="footer-left">
-
-                <img src="img/helsam_logo.png" class="footer-logo" alt="Helsam logo">
-
-                <div class="footer-columns">
-
-                    <div class="footer-col">
-                        <h3>Produkter</h3>
-                        <p>Skønhed</p>
-                        <p>Kosttilskud</p>
-                        <p>Madvarer</p>
-                        <p>Drikkevarer</p>
-                        <p>Mænd</p>
-                        <p>Børn</p>
-                    </div>
-
-                    <div class="footer-col">
-                        <h3>Hjælp</h3>
-                        <p>Kontakt</p>
-                        <p>Min konto</p>
-                        <p>International</p>
-                    </div>
-
-                    <div class="footer-col">
-                        <h3>Social</h3>
-                        <p>Instagram</p>
-                        <p>Twitter</p>
-                        <p>LinkedIn</p>
-                        <p>Henvis</p>
-                    </div>
-
-                    <div class="footer-col">
-                        <h3>Partner</h3>
-                        <p>Praktikere</p>
-                        <p>Presse</p>
-                        <p>Tilmeld dig</p>
-                        <p>Hjælp</p>
-                    </div>
-
-                    <div class="footer-col">
-                        <h3>Om</h3>
-                        <p>Videnskab</p>
-                        <p>Bæredygtighed</p>
-                        <p>SeedLabs</p>
-                        <p>Forespørg</p>
-                    </div>
-
-                    <div class="footer-col">
-                        <h3>Juridisk</h3>
-                        <p>Vilkår og betingelser</p>
-                        <p>Privatlivspolitik</p>
-                        <p>Tilgængelighed</p>
-                        <p>Samtykkepræferencer</p>
-                    </div>
-
-
-
-
-                </div>
+    <!-- FOOTER / SIDEFOD -->
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <!-- Kolonne: brand / kort intro -->
+            <div class="site-footer__column site-footer__column--brand">
+                <h3>Helsam</h3>
+                <p>Din partner til en sundere livsstil.</p>
             </div>
 
-            <!-- Højre side (nyhedsbrev) -->
-            <div class="footer-newsletter">
-                <h2>Tilmeld nyhedsbrevet</h2>
-                <p>eksklusive tilbud rabatter og klubber</p>
+            <!-- Kolonne: produktkategorier -->
+            <div class="site-footer__column">
+                <h3>Køb hos Helsam</h3>
+                <ul>
+                    <li><a href="#">Kosttilskud</a></li>
+                    <li><a href="#">Vitaminer</a></li>
+                    <li><a href="#">Hudpleje</a></li>
+                    <li><a href="#">Fødevarer</a></li>
+                    <li><a href="#">Personlig pleje</a></li>
+                </ul>
+            </div>
 
-                <form action="/tak.html" method="post" class="newsletter-form">
-                    <input type="text" name="navn" placeholder="Indtast fulde navn" class="newsletter-input" required>
-                    <input type="email" name="email" placeholder="Indtast e-mail" class="newsletter-input" required>
-                    <button type="submit" class="newsletter-btn">Send</button>
+            <!-- Kolonne: kundeservice-links -->
+            <div class="site-footer__column">
+                <h3>Kundeservice</h3>
+                <ul>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Hjælp | FAQ</a></li>
+                    <li><a href="#">Handelsbetingelser</a></li>
+                    <li><a href="#">Retur & fortrydelse</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolonne: inspiration -->
+            <div class="site-footer__column">
+                <h3>Inspiration</h3>
+                <ul>
+                    <li><a href="#">Artikler</a></li>
+                    <li><a href="#">Opskrifter</a></li>
+                    <li><a href="#">Butikker</a></li>
+                    <li><a href="#">Klub Helsam</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolonne: nyhedsbrev -->
+            <div class="site-footer__column site-footer__column--newsletter">
+                <h3>Nyhedsbrev</h3>
+                <p class="footer-newsletter__text">
+                    Få nyheder, tilbud og sundhedsinspiration direkte i din indbakke.
+                </p>
+
+                <!-- Simpel form (ikke forbundet til backend) -->
+                <form class="footer-newsletter">
+                    <label for="newsletter-email" class="visually-hidden">E-mail</label>
+                    <div class="footer-newsletter__row">
+                        <input id="newsletter-email" type="email" placeholder="Din e-mail" required />
+                        <button type="submit">Tilmeld</button>
+                    </div>
                 </form>
             </div>
-
         </div>
 
-        <p class="footer-copy">© 2025 Helsam.dk. Helsam Gruppen A/S CVR nr.: 17444387 Rønsdam 1 6400 Sønderborg Tlf.
-            7445 8140 kundecenter@helsam.dk</p>
+        <!-- Række med trust-claims -->
+        <div class="site-footer__trust-row">
+            <span>✔ Naturlige produkter</span>
+            <span>✔ Sikker betaling</span>
+            <span>✔ Personlig rådgivning i butik</span>
+        </div>
 
-        <img src="img/kontrol-rapport.webp" class="kontrol-rapport" alt="Se kontrol rapport">
-
+        <!-- Nederste footerlinje -->
+        <div class="site-footer__bottom-row">
+            <p>© 2025 Helsam – studenterprojekt</p>
+            <nav class="site-footer__legal-nav">
+                <a href="#">Persondatapolitik</a>
+                <span aria-hidden="true">•</span>
+                <a href="#">Cookiepolitik</a>
+                <span aria-hidden="true">•</span>
+                <a href="#">Handelsbetingelser</a>
+            </nav>
+        </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/overall_produktside.js"></script>
 </body>
 
 </html>
