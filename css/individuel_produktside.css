@@ -1,6 +1,8 @@
-/* css/produkt_individuel.css */
+/* ===============================
+   1) FARVER & GLOBAL BAGGRUND
+   =============================== */
 
-/* Farver inspireret af mockup */
+/* Globale farve-variabler til denne side */
 :root {
   --prod-bg: #d9ccb5;
   --prod-bg-dark: #183822;
@@ -8,16 +10,21 @@
   --prod-border-soft: rgba(0, 0, 0, 0.08);
 }
 
+/* Sætter sidebaggrunden til den lyse beige */
 body {
   background-color: var(--prod-bg);
 }
 
-/* HEADER */
+/* ===============================
+   2) HEADER (LOGO + IKONER)
+   =============================== */
+
 .product-header {
   background-color: var(--prod-bg);
   border-bottom: 1px solid var(--prod-border-soft);
 }
 
+/* Wrapper for indholdet i headeren – centrerer og begrænser bredde */
 .product-header__inner {
   max-width: 480px;
   margin: 0 auto;
@@ -27,6 +34,7 @@ body {
   justify-content: space-between;
 }
 
+/* Logo-link (H + tekst) */
 .product-header__logo {
   display: flex;
   align-items: center;
@@ -36,6 +44,7 @@ body {
   font-weight: 600;
 }
 
+/* Rund grøn cirkel med “H” */
 .product-header__logo-mark {
   width: 28px;
   height: 28px;
@@ -52,12 +61,14 @@ body {
   font-size: 1rem;
 }
 
+/* Wrapper til search og cart ikoner */
 .product-header__icons {
   display: flex;
   align-items: center;
   gap: 0.2rem;
 }
 
+/* Generel style til ikonknapper (burger, søg, kurv) */
 .icon-button {
   border: none;
   background: none;
@@ -66,6 +77,7 @@ body {
   cursor: pointer;
 }
 
+/* SØGEFELT – bruges ikke på denne side lige nu, men beholdt til genbrug */
 .product-header__search {
   max-width: 480px;
   margin: 0 auto;
@@ -80,26 +92,30 @@ body {
   font-size: 0.9rem;
 }
 
-/* PAGE WRAP */
+/* ===============================
+   3) SIDEWRAP + HERO
+   =============================== */
+
+/* Begrænser side-bredden for indholdet */
 .product-page {
   max-width: 480px;
   margin: 0 auto;
   padding-bottom: 2.5rem;
 }
 
-/* HERO / PRODUKTKORT – MOBIL */
-
+/* HERO-SEKTION: billeder + produktkort */
 .product-hero {
   padding: 1rem;
 }
 
+/* Produktbilleder-stak på mobil */
 .product-media {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
 }
 
-/* Hovedbillede – kun billedet, ingen kasse */
+/* Hovedbillede – står direkte på baggrunden */
 .product-media__main {
   padding: 0;
   margin: 0;
@@ -118,7 +134,7 @@ body {
   border-radius: 0;
 }
 
-/* THUMB GRID */
+/* Thumbnails-rækken under hovedbillede */
 .product-media__thumbs {
   margin-top: 1rem;
   display: grid;
@@ -126,6 +142,7 @@ body {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+/* Individuelt thumb-kort */
 .thumb {
   background-color: #e3d4b9;
   overflow: hidden;
@@ -140,7 +157,7 @@ body {
   display: block;
 }
 
-/* Tekstkasser hvis de bruges senere */
+/* Tekst-thumbs – hvis du vil bruge tekstkort i stedet for billeder */
 .thumb--text,
 .thumb--icon {
   background-color: #204328;
@@ -167,7 +184,10 @@ body {
   margin-top: 0.2rem;
 }
 
-/* Produktkort */
+/* ===============================
+   4) PRODUKTKORT (HØJRE SIDE)
+   =============================== */
+
 .product-card {
   background-color: var(--prod-card-bg);
   padding: 1.2rem 1rem 1.1rem;
@@ -175,37 +195,55 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
+/* Lille label oven over titel (fx serie) */
 .product-card__label {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.7rem;
-  color: #6d6559;
+  color: 272623;
   margin-bottom: 0.3rem;
 }
 
+/* Produktnavn */
 .product-card__title {
   font-size: 1.2rem;
   margin-bottom: 0.2rem;
 }
 
+/* Beskrivelse-copy */
 .product-card__subtitle {
   font-size: 0.9rem;
-  color: #5e5b55;
+  color: #272623;
   margin-bottom: 0.4rem;
 }
 
+.product-card__list {
+  margin: 0.3rem 0 0.7rem;
+  padding-left: 1.2rem; /* gør bullet punkterne justeret */
+  color: #272623;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.product-card__list li + li {
+  margin-top: 0.2rem;
+}
+
+/* Info-linje om kapsler, dosis osv. */
 .product-card__info {
   font-size: 0.8rem;
-  color: #6f6a61;
+  color: #272623;
   margin-bottom: 0.5rem;
 }
 
+/* Pris */
 .product-card__price {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.7rem;
 }
 
+/* Wrapper til antal, læg i kurv, lager, tjek-lager-knap */
 .product-card__actions {
   display: flex;
   flex-direction: column;
@@ -213,6 +251,7 @@ body {
   margin-bottom: 0.8rem;
 }
 
+/* (dropdown inde i kort) */
 .product-card__select {
   display: flex;
   justify-content: space-between;
@@ -229,23 +268,27 @@ body {
   background-color: #f8f0df;
 }
 
+/* knap i fuld bredde */
 .btn--full {
   width: 100%;
   justify-content: center;
 }
 
-/* Lille ekstra-kort (køb 2 spar 25%) */
+/* =======================================
+   PAKKETILBUD / “KØB 2 SPAR 25%”-BOKS
+   ======================================= */
+
 .product-card__extra {
   margin-top: 0.6rem;
   padding: 1rem 1.1rem;
-  background-color: #f3e4cf;
+  background-color: #f5f7f0;
   display: flex;
   align-items: center;
   gap: 1.2rem;
   font-size: 0.85rem;
 }
 
-/* Venstre tekstkolonne */
+/* Venstre tekstkolonne i boksen */
 .product-card__extra-text {
   flex: 1;
 }
@@ -258,11 +301,11 @@ body {
 
 .product-card__extra-copy {
   margin: 0 0 0.6rem;
-  color: #6b5f50;
+  color: black;
   line-height: 1.4;
 }
 
-/* Prislinje */
+/* Prislinje (tilbudspris + førpris) */
 .product-card__extra-prices {
   display: flex;
   align-items: baseline;
@@ -280,12 +323,12 @@ body {
   opacity: 0.6;
 }
 
-/* Højre produktbillede */
+/* Højre produktbillede (lille pakke) */
 .product-card__extra-media {
   flex: 0 0 auto;
   width: 80px;
   height: auto;
-  background: transparent; /* fjerner den mørke grønne boks */
+  background: transparent;
 }
 
 .product-card__extra-media img {
@@ -294,14 +337,40 @@ body {
   display: block;
 }
 
-/* række med grøn qty + lys knap */
+.product-card__extra-btn {
+  margin-top: 0.6rem;
+  align-self: flex-start;
+  padding: 0.6rem 1.6rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #183822;
+  color: #f8f1dd;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  transition: background-color 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease;
+}
+
+.product-card__extra-btn:hover {
+  background-color: #245236;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* =======================================
+   ANTALSBOKS + “LÆG I KURV”-KNAP
+   ======================================= */
+
+/* Række med grøn qty-boks + lys CTA */
 .product-buy-row {
   display: flex;
   align-items: center;
   gap: 0.7rem;
 }
 
-/* grøn [- 1 +] boks */
+/* Grøn [- 1 +] boks */
 .quantity-selector {
   display: flex;
   align-items: center;
@@ -310,7 +379,7 @@ body {
   padding: 0.6rem 0.9rem;
   background-color: #2f4a33;
   color: #fff;
-  border-radius: 0.8rem;
+  border-radius: 4px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
@@ -327,11 +396,11 @@ body {
   font-weight: 500;
 }
 
-/* lys “Læg i kurv” */
+/* Lys “Læg i kurv”-knap */
 .add-to-cart-btn {
   flex: 1;
   padding: 0.7rem 1rem;
-  border-radius: 0.8rem;
+  border-radius: 4px;
   border: 1px solid #bcb3a5;
   background-color: #ede6d8;
   font-size: 1rem;
@@ -346,17 +415,22 @@ body {
   transform: translateY(-1px);
 }
 
-/* ACCORDIONS – generelle */
+/* ===============================
+   5) ACCORDIONS (GENERIC BASE)
+   =============================== */
+
+/* Standard padding til accordions-wrapper */
 .product-accordions {
   padding: 0.5rem 1rem 0.5rem;
 }
 
-/* Når accordions ligger inde i produktkortet skal de flugte med teksten */
+/* Når accordions ligger inde i produktkort, skal de flugte pænt */
 .product-card .product-accordions {
   padding-left: 0;
   padding-right: 0;
 }
 
+/* Basis-knap for accordions (baggrundsfarve overskrives senere i varianter) */
 .accordion {
   width: 100%;
   text-align: left;
@@ -375,6 +449,7 @@ body {
   margin-left: 0.8rem;
 }
 
+/* Skjult indhold – åbnes med JS ved at tilføje .accordion__content--open */
 .accordion__content {
   max-height: 0;
   overflow: hidden;
@@ -387,23 +462,56 @@ body {
   opacity: 0;
 }
 
-.accordion__content p,
-.accordion__content ul {
-  font-size: 0.85rem;
-  color: white;
-  padding: 0.6rem 0 0.7rem;
-}
-
-/* Når den er åben */
+/* Når accordion er åben: opacity → 1 (max-height styres også med JS) */
 .accordion__content.accordion__content--open {
   opacity: 1;
 }
 
+/* ===============================
+   6) LAGERSTATUS BADGE
+   =============================== */
+
+/* Lille kort med lagerstatus + leveringstekst */
+.product-stock {
+  margin: 1.1rem 0 1.6rem;
+  padding: 0.6rem 0.9rem;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background-color: rgba(24, 56, 34, 0.05); /* let grønlig boks */
+  border-radius: 4px;
+}
+
+.stock-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #183822; /* mørk grøn tekst */
+}
+
+/* Lille grøn prik med ring rundt om */
+.stock-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #1b5e20;
+  box-shadow: 0 0 0 2px rgba(27, 94, 32, 0.2);
+}
+
+.delivery-text {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #272623;
+  opacity: 0.9;
+}
+
 /* ======================================
-   OVERSKRIV ACCORDIONS INDE I PRODUKTKORTET
-   Så de får linje-look som FAQ
+   7) SPECIFIK STYLING AF ACCORDIONS I KORT
    ====================================== */
 
+/* I produktkortet skal accordions ligne linjer i stedet for bokse */
 .product-card .accordion {
   background-color: transparent;
   border: none;
@@ -425,19 +533,24 @@ body {
   padding: 0.5rem 0 1rem;
 }
 
+/* tekst i base-accordion */
 .product-card .accordion__content p,
 .product-card .accordion__content ul {
   padding: 0;
-  color: #4d4943;
+  color: black;
 }
 
-/* Grøn hero-del med billede + accordions */
+/* ===============================
+   8) GRØN STORY-SEKTION
+   =============================== */
+
 .product-story {
   margin-top: 2rem;
   background-color: #172807;
   color: #f9f4e6;
 }
 
+/* Billed-del på grøn baggrund */
 .product-story__image {
   height: 260px;
   overflow: hidden;
@@ -451,11 +564,12 @@ body {
   display: block;
 }
 
-/* Accordions på grøn baggrund – Seed style linjer */
+/* Accordions på den grønne baggrund */
 .product-accordions--on-green {
   padding: 1.5rem 1.5rem 1.8rem;
 }
 
+/* Knapperne i grøn sektion */
 .accordion--on-green {
   background-color: transparent;
   color: #f9f4e6;
@@ -466,25 +580,27 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+/* Første grønne accordion får også top-linje */
 .product-accordions--on-green .accordion--on-green:first-of-type {
   border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+/* Content til grønne accordions */
 .accordion--on-green + .accordion__content {
   background-color: transparent;
   margin: 0;
   padding: 0.4rem 0 0.8rem;
   color: #f6f1e2;
 }
+
 /* ======================================
-   ANDRE KØBTE OGSÅ – SLIDER
+   9) “ANDRE KØBTE OGSÅ” – SLIDER
    ====================================== */
 
 .related-products {
   padding: 3rem 2rem;
   background-color: #f3e4cf;
   margin: 3rem auto;
-
   max-width: 1200px;
 }
 
@@ -512,7 +628,7 @@ body {
   padding: 0 2.5rem; /* plads til pile */
 }
 
-/* skjul grim scrollbar, men stadig scroll/swipe */
+/* skjul scrollbar visuelt, men bevar scroll */
 .related-track::-webkit-scrollbar {
   display: none;
 }
@@ -521,17 +637,17 @@ body {
   scrollbar-width: none;
 }
 
-/* Kortene */
+/* De enkelte produktkort i slideren */
 .related-item {
   scroll-snap-align: start;
-  background: #fff9f0;
+  background: #f7f8f8;
   padding: 1rem 1.2rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 210px; /* gør at der kan stå ca. 5 på en række */
+  min-width: 210px; /* ca. 5 kort på én række på store skærme */
 }
 
 .related-item img {
@@ -565,7 +681,7 @@ body {
   background-color: #2f4a33;
   color: white;
   border: none;
-  border-radius: 0.8rem;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
   transition: opacity 0.2s ease;
@@ -575,7 +691,7 @@ body {
   opacity: 0.85;
 }
 
-/* Pile-knapper */
+/* Pile-knapper til slideren */
 .related-arrow {
   position: absolute;
   top: 50%;
@@ -607,7 +723,7 @@ body {
   background-color: #fff9f0;
 }
 
-/* Responsiv justering */
+/* Responsiv justering af slider på små skærme */
 @media (max-width: 700px) {
   .related-products {
     padding: 2.2rem 1.2rem;
@@ -622,36 +738,11 @@ body {
   }
 }
 
-/* EXPLAINER */
-.product-explainer {
-  background-color: #183822;
-  color: #f8f1dd;
-  padding: 1.5rem 1rem 1.8rem;
-}
+/* ======================================
+   10) HELP / FAQ – "Spørgsmål?"
+   ====================================== */
 
-.product-explainer h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.product-explainer p {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.product-explainer__capsules {
-  display: grid;
-  gap: 0.7rem;
-}
-
-.capsule-block {
-  border-radius: 0.8rem;
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 0.7rem 0.8rem;
-  font-size: 0.85rem;
-}
-
-/* HELP / FAQ – "Spørgsmål?" */
+/* Overordnet container for FAQ-sektionen */
 .product-help {
   width: 100%;
   background-color: transparent;
@@ -663,6 +754,7 @@ body {
   margin: 0 auto;
 }
 
+/* Venstre tekst (overskrift + intro) */
 .product-help__text h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
@@ -673,12 +765,12 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* FAQ-del til højre */
+/* FAQ-del (accordion-liste) */
 .product-help__faq {
   margin-top: 1.5rem;
 }
 
-/* Accordion-stil i FAQ (tynde linjer, ingen bokse) */
+/* FAQ-accordion-knapper – tynde linjer, ingen bokse */
 .help-accordion {
   background-color: transparent;
   border: none;
@@ -693,23 +785,25 @@ body {
   text-align: left;
 }
 
+/* Første får også top-linje */
 .product-help__faq .help-accordion:first-of-type {
   border-top: 1px solid rgba(0, 0, 0, 0.18);
 }
 
-/* overskriv generel accordion-content inde i FAQ */
+/* Base accordion-content for FAQ-delen */
 .product-help__faq .accordion__content {
   background-color: transparent;
   margin: 0;
   padding: 0.4rem 0 0.8rem;
 }
 
+/* Tekst inde i FAQ-accordion (mørk grå) */
 .product-help__faq .accordion__content p {
   font-size: 0.9rem;
   color: #4d4943;
 }
 
-/* "Se alle spørgsmål" knap */
+/* "Se alle spørgsmål"-knap */
 .help-all-btn {
   margin-top: 1.2rem;
   padding: 0.55rem 1rem;
@@ -721,20 +815,23 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* Skjulte FAQ-items */
+/* Klasse hvis nogle FAQer skal skjules fra start */
 .faq-hidden {
   display: none;
 }
 
-/* ANMELDELSER – NYT LAYOUT */
+/* ======================================
+   12) ANMELDELSER – KORT + LISTE
+   ====================================== */
 
 .product-reviews {
   margin-top: 2.5rem;
   padding: 0 1rem 2.5rem;
 }
 
+/* Card omkring hele anmeldelsessektionen */
 .product-reviews__card {
-  background-color: #f6e5cd;
+  background-color: #e8e3da;
   border-radius: 1rem;
   padding: 1.6rem 1.4rem 1.8rem;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
@@ -772,8 +869,9 @@ body {
   color: #6b655b;
 }
 
+/* Lodret divider – skjult på mobil, vist på desktop */
 .product-reviews__divider {
-  display: none; /* vises kun på desktop */
+  display: none;
 }
 
 .product-reviews__distribution {
@@ -791,6 +889,7 @@ body {
   font-size: 0.85rem;
 }
 
+/* Baggrund for bar */
 .review-bar {
   height: 4px;
   border-radius: 999px;
@@ -798,6 +897,7 @@ body {
   overflow: hidden;
 }
 
+/* Fyldet i baren (grøn) */
 .review-bar span {
   display: block;
   height: 100%;
@@ -809,20 +909,21 @@ body {
   color: #5e5a54;
 }
 
-/* Vandret streg */
+/* Vandret adskillelseslinje mellem top og liste */
 .product-reviews__line {
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   margin: 1.4rem 0 1.2rem;
 }
 
-/* Liste med “fake” anmeldelser */
+/* Liste med enkeltanmeldelser */
 .reviews-list {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
 }
 
+/* Header i hver review (navn + stjerner) */
 .review-item__header {
   display: flex;
   align-items: center;
@@ -849,19 +950,19 @@ body {
   line-height: 1.4;
 }
 
-/* Knap nederst */
+/* Knap nederst i anmeldelsessektionen */
 .product-reviews__button {
   margin-top: 1.2rem;
   align-self: center;
   padding: 0.75rem 2rem;
-  border-radius: 999px; /* super rund */
+  border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  background-color: #fff9f0;
+  background-color: #102b16;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.25s ease;
-  color: #3b3a36;
+  color: white;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
@@ -870,6 +971,7 @@ body {
   border-color: rgba(0, 0, 0, 0.35);
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  color: #102b16;
 }
 
 .product-reviews__button:active {
@@ -877,21 +979,22 @@ body {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer lidt smallere på denne side */
+/* Gør footer lidt løsere under sektionen */
 .site-footer {
   margin-top: 2rem;
 }
 
 /* =========================
-   D3 KAPSEL SEKTION
+   13) D3 KAPSEL SEKTION
    ========================= */
 
 .d3-tech {
-  background-color: #102b16; /* mørk grøn, matcher pillen bedre */
+  background-color: #102b16; /* mørk grøn, matcher pillen */
   color: #f8f1dd;
   padding: 3.5rem 0 4rem;
 }
 
+/* Grid med tekst + features + pille */
 .d3-tech__inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -902,8 +1005,7 @@ body {
   align-items: center;
 }
 
-/* Venstre kolonne */
-
+/* Venstre kolonne – overskrift + brødtekst */
 .d3-tech__heading {
   font-size: 2.4rem;
   line-height: 1.15;
@@ -917,8 +1019,7 @@ body {
   margin: 0 0 1.8rem;
 }
 
-/* CTA-knap – mere “brandet” */
-
+/* CTA-knap (bruges ikke lige nu på siden, men klar til brug) */
 .d3-tech__cta {
   display: inline-flex;
   align-items: center;
@@ -942,8 +1043,7 @@ body {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
-/* Midterkolonne – egenskaber */
-
+/* Midterkolonne – de tre feature-tekster */
 .d3-tech__features {
   display: flex;
   flex-direction: column;
@@ -964,7 +1064,7 @@ body {
   max-width: 22rem;
 }
 
-/* Lille “dotted line” effekt mellem features */
+/* Dotted line under features */
 .d3-tech__feature {
   position: relative;
   padding-bottom: 1.2rem;
@@ -988,8 +1088,7 @@ body {
   display: none;
 }
 
-/* Højre kolonne – pille */
-
+/* Højre kolonne – pille-billedet */
 .d3-tech__pill {
   display: flex;
   justify-content: flex-end;
@@ -997,16 +1096,15 @@ body {
 }
 
 .d3-tech__pill img {
-  width: 210px; /* justér hvis du vil have den større/mindre */
+  width: 210px;
   height: auto;
   display: block;
   filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.65));
-  /* en anelse glow / kontrast */
   image-rendering: auto;
 }
 
 /* =========================
-   RESPONSIVT
+   14) RESPONSIVT (D3 SEKT.)
    ========================= */
 
 @media (max-width: 960px) {
@@ -1036,15 +1134,227 @@ body {
     width: 180px;
   }
 
+  /* Viser først tekst, så pille, så features */
   .d3-tech__features {
-    order: 3; /* først tekst, så pille, så features hvis du vil ombytte – fjern hvis ikke */
+    order: 3;
   }
 }
 
-/***************************** DESKTOP VERSION ********************************/
+/* ======================================
+   15) TJEK LAGER I BUTIKKER – INLINE PANEL
+   ====================================== */
+
+/* Knap under køb, der åbner panelet */
+.check-store-btn {
+  margin-top: 0.7rem;
+  width: 100%;
+  background: #183822;
+  padding: 0.75rem 1.2rem;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.check-store-btn:hover {
+  background: #245236;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Selve panelet (skjult som udgangspunkt) */
+.store-check-inline {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.45s ease, opacity 0.35s ease;
+  margin-top: 0.5rem;
+
+  background: #ffffff;
+  padding: 0 1.8rem; /* fjernes visuelt, når hidden → fyldes ud når .open */
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Når panelet er åbent (JS tilføjer .open) */
+.store-check-inline.open {
+  max-height: 900px; /* stort nok til alt indhold */
+  opacity: 1;
+  padding: 1.5rem 1.8rem;
+}
+
+/* Lidt fade/slide-in animation (kan bruges via JS hvis ønsket) */
+@keyframes fadeInStore {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header inde i lager-panelet */
+.store-check-inline__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.store-check-inline h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1c3a28;
+}
+
+/* Lukke-knap (kryds) */
+.store-check-inline__close {
+  border: none;
+  background: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+  color: #6b655b;
+}
+
+/* Label over postnummer-input */
+.store-check-inline label {
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  color: #4d4a45;
+}
+
+/* Række med input + “Søg”-knap */
+.store-check-inline__row {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.store-check-inline__row input {
+  flex: 1;
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #cfc7b6;
+  background: #faf7f1;
+  font-size: 0.95rem;
+}
+
+.store-check-inline__row button {
+  border: none;
+  background: #183822;
+  color: #fff;
+  padding: 0 1.1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.store-check-inline__row button:hover {
+  background: #245236;
+}
+
+/* Lille hjælpetekst under søgning */
+.store-check-inline__helper {
+  font-size: 0.8rem;
+  color: #152a07;
+  margin-bottom: 0.9rem;
+}
+
+/* Liste med butiksresultater */
+.store-list-inline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.store-list-inline li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.store-list-inline li:last-child {
+  border-bottom: none;
+}
+
+.store-list-inline strong {
+  font-size: 1.02rem;
+  color: #1c3a28;
+}
+
+/* meta-linje: by + afstand */
+.store-meta {
+  font-size: 0.85rem;
+  color: #152a07;
+  margin-top: 0.1rem;
+}
+
+/* status-linje med prik + tekst */
+.store-status {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.35rem 0 0.1rem;
+  font-size: 0.9rem;
+}
+
+/* Grøn/rød prik til lagerstatus */
+.dot-green,
+.dot-red {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-green {
+  background-color: #3cb043;
+  box-shadow: 0 0 0 3px rgba(60, 176, 67, 0.25);
+}
+
+.dot-red {
+  background-color: #c62828;
+  box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.25);
+}
+
+.store-hours {
+  font-size: 0.85rem;
+  color: black;
+  margin-bottom: 0.25rem;
+}
+
+.store-list-inline a {
+  font-size: 0.85rem;
+  color: #1a0dab;
+  text-decoration: underline;
+}
+
+/* Lidt tighter padding på helt små skærme */
+@media (max-width: 480px) {
+  .store-check-inline {
+    padding: 1.4rem 1.3rem;
+  }
+}
+
+/*****************************
+   16) DESKTOP VERSION (960px+)
+******************************/
 
 @media (min-width: 960px) {
-  /* Siden bredere på desktop */
+  /* Gør selve siden bredere på desktop */
   .product-page {
     max-width: 1200px;
     margin: 0 auto;
@@ -1114,7 +1424,7 @@ body {
   .product-card__extra {
     margin-top: 1rem;
     padding: 0.8rem 1rem;
-    background-color: #f9ecda;
+    background-color: #f5f7f0;
   }
 
   /* Grøn sektion: billede til venstre, accordions til højre */
@@ -1138,18 +1448,11 @@ body {
     justify-content: center;
   }
 
-  /* Badges */
-  .product-badges {
-    max-width: 1200px;
-    margin: 1.8rem auto 0;
-    padding: 0 2rem;
-  }
-
   .product-badges__card {
     padding: 1.2rem 1.4rem;
   }
 
-  /* Explainer */
+  /* Explainer på desktop – fylder hele bredden */
   .product-explainer {
     max-width: 1200px;
     margin: 0 auto;
@@ -1166,29 +1469,22 @@ body {
     gap: 1rem;
   }
 
-  /* Spørgsmål-sektion – 2 kolonner */
+  /* Spørgsmål-sektion – 2 kolonner centreret */
   .product-help {
     padding: 4rem 2rem;
   }
 
   .product-help__inner {
     max-width: 900px; /* smallere = tættere på midten */
-    margin: 0 auto; /* centrer hele blokken */
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* mere balanced columns */
+    grid-template-columns: 1fr 1fr;
     column-gap: 3rem;
     align-items: start;
     padding: 4rem 0;
   }
 
-  /* Venstre side (tekst) */
-  .product-help__inner h2 {
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  /* Venstre side (tekst) */
+  /* Venstre side (overskrift + introtekst) – desktop */
   .product-help__inner h2 {
     font-size: 3rem;
     font-weight: 600;
@@ -1200,12 +1496,11 @@ body {
     color: #3a352d;
   }
 
-  /* højre kolonne: FAQ */
-
+  /* højre kolonne: FAQ justeres mod midten */
   .product-help__faq {
     grid-column: 2 / 3;
     max-width: 480px;
-    justify-self: center; /* ikke helt ude i højre side */
+    justify-self: center;
     margin-top: 0;
   }
 
@@ -1217,7 +1512,7 @@ body {
     font-size: 1.4rem;
   }
 
-  /* DESKTOP – samme stil som mockup */
+  /* Desktopspecifik styling af anmeldelser */
   .product-reviews {
     max-width: 1200px;
     margin: 3rem auto 0;
