@@ -7,13 +7,8 @@
 }
 
 /* HEADER */
-.header {
-  background-color: transparent;
-}
-
 .header-content {
-  padding: 12px 16px;
-
+  /* padding: 12px 16px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +32,7 @@
 
 /* logo */
 .logo img {
-  height: 70px;
+  height: 100px;
 }
 
 /* højre ikoner */
@@ -49,6 +44,41 @@
 /****************************************** BODY ******************************************/
 /****************** HERO-SEKTION ******************/
 
+/* HEADER OVER HERO */
+header {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 60vh;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* fjerner beige streg */
+}
+
+/* GØR HEADER-INDHOLD SYNLIGT OVER VIDEO */
+#menu a,
+#burger {
+  color: white;
+}
+
+.cta_btn img,
+.cta_btn2 img,
+.cta_btn3 img {
+  filter: brightness(0) invert(1);
+}
+
 body {
   background-color: #d6cfbe;
 }
@@ -57,6 +87,7 @@ body {
   width: 100%;
   height: 60vh;
   object-fit: cover;
+  display: block; /* fjerner beige mellemrum under video */
 }
 
 .hero {
@@ -68,7 +99,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* centerer logoet */
-  height: 100px;
+  height: 150px;
 }
 
 /****************** KATEGORI-SEKTION *******************/
