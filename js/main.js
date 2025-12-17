@@ -262,6 +262,15 @@ if (zipcodeInput) {
   });
 }
 
+const mainImg = document.querySelector(".product-main-img");
+const thumbs = document.querySelectorAll(".product-media__thumbs img");
+
+thumbs.forEach((thumb) => {
+  thumb.addEventListener("click", () => {
+    mainImg.src = thumb.src;
+  });
+});
+
 ///////////////////////////// INDIVIDUEL PRODUKTSIDE ///////////////////////////////
 
 class Login extends HTMLElement {
@@ -380,3 +389,44 @@ window.addEventListener("load", () => {
     document.body.prepend(div);
   }
 });
+
+// ==========================
+// HEADER POPOVERS (kurv + login)
+// ==========================
+
+const popoverButtons = document.querySelectorAll("[data-popover-target]");
+const popoverPanels = document.querySelectorAll("[data-popover]");
+
+if (popoverButtons.length && popoverPanels.length) {
+  popoverButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.dataset.popoverTarget;
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+
+      const isOpen = panel.hasAttribute("data-open");
+
+      // Luk alle andre popovers
+      popoverPanels.forEach((p) => p.removeAttribute("data-open"));
+      popoverButtons.forEach((b) => b.setAttribute("aria-expanded", "false"));
+
+      // Hvis denne ikke var åben → åbn den
+      if (!isOpen) {
+        panel.setAttribute("data-open", "");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
+  // Luk popovers hvis man klikker udenfor
+  document.addEventListener("click", (event) => {
+    if (
+      event.target.closest("[data-popover-target]") ||
+      event.target.closest("[data-popover]")
+    ) {
+      return;
+    }
+    popoverPanels.forEach((p) => p.removeAttribute("data-open"));
+    popoverButtons.forEach((b) => b.setAttribute("aria-expanded", "false"));
+  });
+}

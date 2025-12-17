@@ -24,28 +24,39 @@
 
 <body>
     <!-- HEADER / TOPNAVIGATION -->
-    <header class="site-header product-header">
-        <div class="product-header__inner">
-            <!-- Burger-menu ikon (mobilnavigation) -->
-            <button class="icon-button" aria-label="Åbn menu">
-                ☰
+    <header>
+        <div class="header-top">
+            <a href="index.html"><img class="logo" src="img/helsam_logo.png" alt="logo"></a>
+            <button class="cta_btn" popovertarget="popup_kurv">
+                <img src="Images/shopping_cart.png" alt="Se mere">
             </button>
+            <button class="cta_btn2" popovertarget="popup_login">
+                <img src="Images/login-icon.png" alt="Se mere">
+            </button>
+            <button class="cta_btn3">
+                <img src="Images/search_icon.png" alt="Se mere">
+            </button>
+        </div>
 
-            <!-- Logo-link tilbage til forsiden -->
-            <a href="index.html" class="product-header__logo">
-                <span class="product-header__logo-mark">H</span>
-                <span class="product-header__logo-text">Helsam</span>
-            </a>
+        <button id="burger">☰</button>
 
-            <!-- Ikoner til søg og kurv -->
-            <div class="product-header__icons">
-                <button class="icon-button" aria-label="Søg">
-                    🔍
-                </button>
-                <button class="icon-button" aria-label="Kurv">
-                    🛒
-                </button>
-            </div>
+        <nav id="menu">
+            <a href="index.html">Forside</a>
+            <a href="overall_produktsside.html">Produkter</a>
+            <a href="individuel_produktside.html">Individuelt Produkt</a>
+            <a href="informationsside.html">Information</a>
+        </nav>
+
+        <div class="search-dropdown" id="searchDropdown">
+            <input type="text" placeholder="Søg efter produkter...">
+        </div>
+
+
+        <div popover id="popup_kurv">
+            <p>Kurven er tom</p>
+        </div>
+        <div popover id="popup_login">
+            <p>Log ind</p>
         </div>
     </header>
 
@@ -53,13 +64,13 @@
     <main class="product-page">
         <!-- HERO-SEKTION: Produktbilleder + primær produktinfo -->
         <section class="product-hero">
+            <h2 class="visually-hidden">Produktoversigt</h2>
             <!-- VENSTRE SIDE: PRODUKTBILLEDER -->
             <div class="product-media">
                 <!-- Stort hovedbillede -->
                 <div class="product-media__main">
-                    <img src="Images/D3.webp" alt="D3 vitamin produktbillede" />
+                    <img class="product-main-img" src="Images/D3.webp" alt="D3 vitamin produktbillede" />
                 </div>
-
                 <!-- Thumbnail-billeder under hovedbilledet -->
                 <div class="product-media__thumbs">
                     <div class="thumb">
@@ -77,11 +88,11 @@
             <!-- HØJRE SIDE: PRODUKTKORT, KØBSINFO + ACCORDIONS -->
             <div class="product-right">
                 <article class="product-card">
-                    <!-- Brand / serie-label -->
+                    <!-- Brand label -->
                     <p class="product-card__label">Grønne dfi vitaminer</p>
 
                     <!-- Produktnavn -->
-                    <h1 class="product-card__title">B12 vitamin 500 mcg</h1>
+                    <h2 class="product-card__title">B12 vitamin 500 mcg</h2>
 
                     <!-- Kort beskrivelse -->
                     <p class="product-card__subtitle">
@@ -165,6 +176,7 @@
 
                     <!-- ØVERSTE PRODUKT-ACCORDIONS (brug, ingredienser, dosis) -->
                     <section class="product-accordions">
+                        <h2 class="visually-hidden">Produktinformation</h2>
                         <!-- Accordion: Anvendelse -->
                         <button class="accordion">
                             <span>Anvendelse</span>
@@ -233,6 +245,7 @@
 
         <!-- GRØN STORY-SEKTION MED BILLEDE + ACCORDIONS -->
         <section class="product-story">
+            <h2 class="visually-hidden">Produktinfo</h2>
             <!-- Produktbillede på grøn baggrund -->
             <div class="product-story__image">
                 <img src="Images/D3GRØN2.webp" alt="D3 i hånden">
@@ -596,57 +609,11 @@
 
                 <!-- Vandret adskillelseslinje -->
                 <hr class="product-reviews__line" />
-
-                <!-- Liste af “fake” enkeltanmeldelser som eksempel -->
-                <div class="reviews-list">
-                    <!-- Review 1 -->
-                    <article class="review-item">
-                        <header class="review-item__header">
-                            <h3>Louise</h3>
-                            <span class="review-item__stars">★★★★★</span>
-                        </header>
-                        <p class="review-item__meta">Verificeret køber · 2 uger siden</p>
-                        <p class="review-item__text">
-                            Har taget kapslerne i en måneds tid og mærker tydeligt mere energi i hverdagen.
-                        </p>
-                    </article>
-
-                    <!-- Review 2 -->
-                    <article class="review-item">
-                        <header class="review-item__header">
-                            <h3>Anders</h3>
-                            <span class="review-item__stars">★★★★☆</span>
-                        </header>
-                        <p class="review-item__meta">Verificeret køber · 1 måned siden</p>
-                        <p class="review-item__text">
-                            Godt produkt og hurtig levering. Kunne ønske mig en lidt mindre kapsel, men ellers
-                            meget tilfreds.
-                        </p>
-                    </article>
-
-                    <!-- Review 3 -->
-                    <article class="review-item">
-                        <header class="review-item__header">
-                            <h3>Sofie</h3>
-                            <span class="review-item__stars">★★★★★</span>
-                        </header>
-                        <p class="review-item__meta">Verificeret køber · 3 uger siden</p>
-                        <p class="review-item__text">
-                            Har haft udfordringer med energiniveauet om vinteren, og dette tilskud har gjort
-                            en større forskel end forventet. Anbefales!
-                        </p>
-                    </article>
-
-                    <!-- Knap til at se alle anmeldelser -->
-                    <button class="product-reviews__button">
-                        Læs alle anmeldelser
-                    </button>
-                </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER / SIDEFOD -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="site-footer__inner">
             <!-- Kolonne: brand / kort intro -->
