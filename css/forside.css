@@ -1,4 +1,9 @@
 /*********** Layout/Design CSS til forsiden ***********/
+/*Farver*/
+:root {
+  --primary-beige: #d9ccb5;
+  --primary-green: #2f5e3a;
+
 /* MOBILE FIRST */
 * {
   margin: 0;
@@ -50,7 +55,7 @@
 /****************** HERO-SEKTION ******************/
 
 body {
-  background-color: #d6cfbe;
+  background-color: var(--primary-beige);
 }
 
 .hero-video {
@@ -73,7 +78,7 @@ body {
 
 /****************** KATEGORI-SEKTION *******************/
 .category-scroll {
-  background-color: #395228;
+  background-color: var(--primary-green);
   padding: 16px;
   display: flex;
   gap: 12px;
@@ -101,7 +106,7 @@ body {
   margin-top: 8px;
   font-size: 14px;
   font-weight: 600;
-  color: #d6cfbe;
+  color: var(--primary-beige);
 }
 
 /************************* KUNDEKLUB-BANNER *************************/
@@ -137,8 +142,8 @@ body {
 .banner-btn {
   align-self: center;
   padding: 12px 20px;
-  background-color: #2f5e3a;
-  color: #d6cfbe;
+  background-color: var(--primary-green);
+  color: var(--primary-beige);
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
@@ -183,7 +188,7 @@ body {
 /**************************** FOOTER ****************************/
 
 .footer {
-  background-color: #395228;
+  background-color: var(--primary-green)
   color: #d6cfbe;
   padding: 32px 16px;
 }
@@ -273,3 +278,8 @@ body {
   height: 20px;
   float: left;
 }
+
+/**************************** MEDIA QUERIES ****************************/
+@media (min-width: 801px) 
+
+ 
