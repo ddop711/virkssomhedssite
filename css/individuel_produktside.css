@@ -265,8 +265,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
-  transition: background-color 0.2s ease, transform 0.1s ease,
-    box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
   font: inherit;
 }
 
@@ -898,8 +897,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    background-color 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
 .d3-tech__cta:hover {
@@ -1195,7 +1193,7 @@ body {
    16) DESKTOP VERSION (960px+)
 ******************************/
 
-@media (min-width: 960px) {
+@media (min-width: 900px) {
   .product-page {
     max-width: 1200px;
     margin: 0 auto;
@@ -1214,22 +1212,6 @@ body {
   .product-header__search {
     max-width: 1200px;
     padding: 0 2rem 1rem;
-  }
-
-  #burger {
-    display: none !important;
-  }
-
-  #menu a {
-    padding: 10px 0;
-    font-size: 18px;
-    color: white;
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
   /* TOP: produktbillede + info-kort side om side */

@@ -1,16 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /* ===============================
     HEADER (LOGO + IKONER)
    =============================== */
 
 header {
-  background-color: #395228;
+  background-color: #e5d7c0;
   position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 0;
+  padding-top: 15px;
+  border-color: #000000;
+  border-bottom-style: solid;
+  border-width: 3px;
 }
 
 /* Top container */
@@ -18,11 +26,12 @@ header {
   position: relative;
   width: 100%;
   height: 80px;
+  background-color: #e5d7c0;
 }
 
 /* Logo centreret */
 .logo {
-  height: 80px;
+  height: 70px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -33,6 +42,7 @@ header {
 .cta_btn2,
 .cta_btn3 {
   position: absolute;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -45,10 +55,10 @@ header {
   right: 20px;
 }
 .cta_btn2 {
-  right: 60px;
+  right: 55px;
 }
 .cta_btn3 {
-  right: 110px;
+  right: 95px;
 }
 
 /* CTA billeder */
@@ -63,48 +73,55 @@ header {
 #burger {
   position: absolute;
   left: 20px;
-  top: 30px;
-  font-size: 30px;
+  top: 25px;
+  font-size: 40px;
   background: none;
   border: none;
-  color: white;
+  color: #1e1e1e;
   cursor: pointer;
 }
-
 /* ============ MENU ============ */
 
 /* Standard hidden menu */
 #menu {
   display: none;
-  background-color: #395228;
-  position: absolute;
-  top: 100px;
+  background-color: #183822;
+  position: relative;
   left: 0;
   width: 100vw;
   text-align: center;
+  border-top-style: solid;
+  border-width: 2px;
+  border-color: #000000;
 }
-
 /* Når menu er åben */
 #menu.open {
-  display: block;
+  display: flex;
 }
 
 /* Menu links */
 #menu a {
   display: block;
   padding: 10px;
-  color: white;
+  color: #d6cfbe;
   text-decoration: none;
   text-align: left;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #000000;
 }
 
 /* Dropdown søgning */
+
 .search-dropdown {
   display: none;
   width: 100%;
-  padding-inline: 10px;
+  padding: 10px;
   position: static;
   z-index: 999;
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: #000000;
 }
 
 .search-dropdown input {
@@ -117,29 +134,97 @@ header {
 /* ============ POPOVER (KURV + LOGIN) ============ */
 
 /* Grund-styling for alle popovers */
-[data-popover] {
+[popover] {
   position: fixed;
   top: 0;
   left: 100%;
-  transform: translate(-100%, 0); /* skub helt ud til højre */
+  transform: translate(-100%, 0%);
   opacity: 0;
-  width: 0; /* skjult som standard */
-  height: 80%;
-  overflow: auto;
-
-  background-color: #f4ecd7; /* match din sidebaggrund */
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  z-index: 1500;
-
-  transition: opacity 0.2s ease, transform 0.4s ease, width 0.4s ease;
+  transition: opacity 0.2s ease, 0.4s ease;
 }
 
-/* Når popover er "åben" (styres af JS via data-open) */
-[data-popover][data-open] {
+:popover-open {
   opacity: 1;
-  width: 40%; /* samme som du havde før i :popover-open */
+  width: 40%;
+  height: 60%;
+  @starting-style {
+    opacity: 0;
+    width: 0;
+    height: 60%;
+  }
+}
+.popover-close {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popover_header {
+  width: 100%;
+  background-color: #f6f7ef;
+  padding-block: 20px;
+  border: #1e1e1e;
+  border-bottom-style: solid;
+}
+
+h2 {
+  font-size: 24px;
+  margin-left: 15px;
+  font-weight: 600;
+}
+#popup_kurv > p {
+  text-align: center;
+  margin-top: 150px;
+}
+.popover_form {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 30px;
+}
+.popover_form > fieldset > legend {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.login_form {
+  margin-block: 0px;
+}
+#fname {
+  margin-bottom: 20px;
+}
+
+.login_btn {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  margin-block: 10px;
+}
+
+@media (min-width: 900px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #burger {
+    display: none !important;
+  }
+  #menu {
+    position: static !important;
+    display: flex !important;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+  }
+  #menu a {
+    padding-block: 15px;
+    font-size: 28px;
+    border-bottom-style: none;
+  }
 }
 
 /* ========================= FOOTER ========================= */
@@ -154,10 +239,7 @@ header {
   margin: 0 auto;
   display: grid;
   gap: 2rem;
-  grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)) minmax(
-      0,
-      1.6fr
-    );
+  grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)) minmax(0, 1.6fr);
   align-items: flex-start;
 }
 
@@ -223,8 +305,7 @@ header {
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease,
-    box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
   font: inherit;
 }
 .footer-newsletter button[type="submit"]:hover {

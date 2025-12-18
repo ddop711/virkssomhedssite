@@ -13,49 +13,6 @@
 
 /* HEADER */
 
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: transparent;
-  z-index: 1000; /* sørger for at headeren er over videoen */
-}
-
-.header-content {
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Logo */
-.logo img {
-  height: 70px;
-}
-
-/* Header buttons */
-.burger-btn,
-.search-btn,
-.cart-btn {
-  background: none;
-  border: none;
-  min-height: 36px;
-}
-
-.burger-btn img,
-.search-btn img,
-.cart-btn img {
-  height: 24px;
-  width: 24px;
-}
-
-/* Højre ikoner */
-.header-icons {
-  display: flex;
-  gap: 12px;
-}
-
 body {
   background-color: var(--prod-bg-beige);
 }
@@ -80,28 +37,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-/* Header buttons */
-.burger-btn,
-.search-btn,
-.cart-btn {
-  background: none;
-  border: none;
-  min-height: 36px;
-}
-
-.burger-btn img,
-.search-btn img,
-.cart-btn img {
-  height: 24px;
-  width: 24px;
-}
-
-/* Højre ikoner */
-.header-icons {
-  display: flex;
-  gap: 12px;
 }
 
 /****************** KATEGORI-SEKTION *******************/

@@ -56,7 +56,6 @@ p {
   max-height: 400px;
   object-fit: cover;
   object-position: center;
-  display: block;
 }
 
 .info-intro {
@@ -80,155 +79,45 @@ p {
 .info-about {
   background: var(--c-green);
   color: var(--c-white);
-  padding: 8rem 4rem;
+  padding: 2.2rem var(--pad);
 }
 
 .info-about__wrap {
-  position: relative;
-  max-width: var(--max);
-  margin: 0 auto;
-  min-height: 560px;
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
+  gap: 2rem;
+  row-gap: 3rem;
+  min-height: 320px;
+
+  display: grid;
+  grid-template-columns: 1fr minmax(0, var(--max)) 1fr;
+  grid-template-rows: auto auto;
+  row-gap: 6rem;
 }
 
-/* === TEKST BLOKKE === */
+.info-about__media {
+  display: contents;
+}
+
+/* Tekst */
 .info-about__text {
-  max-width: 420px;
+  max-width: none;
+  width: 100%;
   line-height: 1.7;
   font-size: 1.05rem;
-  position: relative;
-  z-index: 2;
 }
 
 .info-about__text--left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  align-self: flex-start;
+  grid-row: 1;
+  grid-column: 1;
+  justify-self: start;
   text-align: left;
+  max-width: 520px;
 }
 
 .info-about__text--right {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  grid-row: 2;
+  grid-column: 2;
+  justify-self: end;
   text-align: right;
-  align-self: flex-end;
-}
-
-/* === PRODUKTER === */
-.info-about__product {
-  position: absolute;
-  width: 110px;
-  z-index: 5;
-}
-
-.info-about__product--top {
-  top: 3rem;
-  right: 6rem;
-}
-
-.info-about__product--bottom {
-  top: 14rem;
-  right: 9rem;
-}
-
-/* === PILLE / BOKS === */
-.info-about__pill {
-  position: absolute;
-  bottom: -2rem;
-  left: 3rem;
-  width: 240px;
-}
-
-/* === STATEMENT === */
-.info-statement {
-  text-align: center;
-  padding: 6rem 2rem;
-}
-
-.info-statement h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.info-statement p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-.info-about {
-  background: var(--c-green);
-  color: var(--c-white);
-  padding: 2.2rem var(--pad) 2.8rem;
-}
-
-.info-about__wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  position: relative;
-  min-height: 560px;
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-}
-
-.info-about__text {
-  position: relative;
-  z-index: 2;
-}
-
-.info-about__text--left {
-  align-self: flex-start;
-  text-align: left;
-}
-
-.info-about__text p {
-  margin: 0;
-}
-
-.info-about__text--right {
-  align-self: flex-end;
-  text-align: right;
-}
-
-.info-about__center p {
-  margin-bottom: 1rem;
-}
-
-.info-about__product,
-.info-about__pill {
-  position: absolute;
-  z-index: 5;
-}
-
-.info-about__product--top {
-  right: calc(-1 * ((100vw - var(--max)) / 2) + 18px);
-  top: 60px;
-  width: 95px;
-}
-
-.info-about__pill--top {
-  right: calc(-1 * ((100vw - var(--max)) / 2) + 42px);
-  top: 160px;
-  width: 70px;
-  transform: rotate(18deg);
-}
-
-.info-about__product--bottom {
-  left: calc(-1 * ((100vw - var(--max)) / 2) + 18px);
-  bottom: 26px;
-  width: 150px;
-  transform: rotate(-12deg);
-}
-
-.info-about__pill--bottom {
-  left: calc(-1 * ((100vw - var(--max)) / 2) + 110px);
-  bottom: 8px;
-  width: 150px;
-  transform: rotate(-10deg);
 }
 
 .info-statement {
@@ -237,26 +126,16 @@ p {
   padding: 2.2rem var(--pad);
 }
 
-.info-statement p {
-  margin: 0;
+.info-statement p .info-statement h2 {
+  margin-left: auto;
+  margin-right: auto;
   font-size: 0.95rem;
-  line-height: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .info-intro {
     padding: 3rem 2rem 3.2rem;
-  }
-  .info-about__text {
-    max-width: 420px;
-  }
-
-  .info-about__product--top {
-    top: 45px;
-    width: 105px;
-  }
-  .info-about__pill--top {
-    top: 160px;
-    width: 70px;
   }
 }

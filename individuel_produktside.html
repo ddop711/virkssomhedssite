@@ -43,7 +43,6 @@
         <nav id="menu">
             <a href="index.html">Forside</a>
             <a href="overall_produktsside.html">Produkter</a>
-            <a href="individuel_produktside.html">Individuelt Produkt</a>
             <a href="informationsside.html">Information</a>
         </nav>
 
@@ -53,10 +52,31 @@
 
 
         <div popover id="popup_kurv">
-            <p>Kurven er tom</p>
+            <button popovertarget="popup_kurv" popovertargetaction="hide" class="popover-close" aria-label="Luk">
+                ✕
+            </button>
+            <div class="popover_header">
+                <h2>Din kurv</h2>
+            </div>
+            <p>Din kurv er tom</p>
+
         </div>
         <div popover id="popup_login">
-            <p>Log ind</p>
+            <button popovertarget="popup_login" popovertargetaction="hide" class="popover-close" aria-label="Luk">
+                ✕
+            </button>
+            <div class="popover_form">
+                <fieldset>
+                    <legend>Log ind</legend>
+                    <form class="login_form">
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname"><br>
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname">
+                    </form>
+                    <button class="login_btn">Submit</button>
+                </fieldset>
+            </div>
         </div>
     </header>
 
@@ -696,6 +716,7 @@
 
     <!-- JavaScript til bl.a. accordions, lager-tjek osv. -->
     <script src="js/main.js"></script>
+    <script src="js/individuel_produktside.js"></script>
 
 </body>
 

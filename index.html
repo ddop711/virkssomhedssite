@@ -9,34 +9,64 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/layout.css">
     <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" href="img/Favicon.webp">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="header-content">
+    <header>
+        <div class="header-top">
 
-            <!-- burger-menu -->
-            <button class="burger-btn">
-                <img src="img/burger_ikon.svg" alt="menu icon">
+            <button class="cta_btn" popovertarget="popup_kurv">
+                <img src="Images/shopping_cart.png" alt="Se mere">
             </button>
+            <button class="cta_btn2" popovertarget="popup_login">
+                <img src="Images/login-icon.png" alt="Se mere">
+            </button>
+            <button class="cta_btn3">
+                <img src="Images/search_icon.png" alt="Se mere">
+            </button>
+        </div>
 
-            <!-- logo -->
-            <a href="index.html" class="logo link">
-                <img src="img/helsam_logo.png" alt="helsam logo">
-            </a>
+        <button id="burger">☰</button>
 
-            <!-- search and cart -->
-            <div class="header-icons">
-                <button class="search-btn">
-                    <img src="img/search_ikon.svg" alt="search">
-                </button>
+        <nav id="menu">
+            <a href="index.html">Forside</a>
+            <a href="overall_produktsside.html">Produkter</a>
+            <a href="informationsside.html">Information</a>
+        </nav>
 
-                <button class="cart-btn">
-                    <img src="img/cart_ikon.svg" alt="cart">
-                </button>
+        <div class="search-dropdown" id="searchDropdown">
+            <input type="text" placeholder="Søg efter produkter...">
+        </div>
+
+
+        <div popover id="popup_kurv">
+            <button popovertarget="popup_kurv" popovertargetaction="hide" class="popover-close" aria-label="Luk">
+                ✕
+            </button>
+            <div class="popover_header">
+                <h2>Din kurv</h2>
             </div>
+            <p>Din kurv er tom</p>
 
+        </div>
+        <div popover id="popup_login">
+            <button popovertarget="popup_login" popovertargetaction="hide" class="popover-close" aria-label="Luk">
+                ✕
+            </button>
+            <div class="popover_form">
+                <fieldset>
+                    <legend>Log ind</legend>
+                    <form class="login_form">
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname"><br>
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname">
+                    </form>
+                    <button class="login_btn">Submit</button>
+                </fieldset>
+            </div>
         </div>
     </header>
 
